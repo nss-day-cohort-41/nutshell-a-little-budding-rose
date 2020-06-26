@@ -19,3 +19,5 @@ const newChore2 = makeChore(2,"Unload dishwasher", "05-28-20")
 
 console.log("this is the new chore", newChore1);
 console.log("this is the second chore", newChore2);
+
+export default makeChore;

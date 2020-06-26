@@ -1,0 +1,36 @@
+/* Delete comments before pushing final project */
+* {
+    font-family: sans-serif;
+}
+
+/* This is just to see where our boxes are */
+section, article, header {
+    border: 1px black solid;
+}
+
+/* For explanations on what's happening with flex see: https://css-tricks.com/almanac/properties/f/flex/ */
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.container__left {
+    flex: 1;
+}
+
+.container__right {
+    flex: 5;
+}
+
+.container__friends {
+    display: flex;
+    flex-direction: row;
+}
+
+.friends_list {
+    flex: 1;
+} 
+
+.messages {
+    flex: 1;
+}

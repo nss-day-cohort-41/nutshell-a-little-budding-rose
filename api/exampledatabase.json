@@ -23,6 +23,27 @@
             "name": "example event",
             "date": "2021-01-01",
             "location": "event location"
+        },
+        {
+            "id": 2,
+            "userId": 1,
+            "name": "example event",
+            "date": "2021-01-01",
+            "location": "event location"
+        },
+        {
+            "id": 3,
+            "userId": 1,
+            "name": "example event",
+            "date": "2021-01-01",
+            "location": "event location"
+        },
+        {
+            "id": 4,
+            "userId": 1,
+            "name": "example event",
+            "date": "2021-01-01",
+            "location": "event location"
         }
     ],
     "tasks": [

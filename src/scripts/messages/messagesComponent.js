@@ -1,12 +1,19 @@
 
 
- const messagesComponentHTML = (messageObject) => {
-const messageHtmlString = `<section>
-<section><p>${messageObject.message}</p></section>
+ const messagesComponent = {
+     HTMLComponent: (messageObject) => {
+        const messageHtmlString = `<section>
+        <section class="messageObject"><p>${messageObject.message}</p></section>
+        
+        </section>`
+        
+        return messageHtmlString
+         },
 
-</section>`
-
-return messageHtmlString
+         messageInputComponent: () => {
+            const inputComponent = `<input class="message--Input" name="message__Input" type="text" placeholder="Add Message"><button class="message--SubmitButton">Submit</button>`
+            return inputComponent
+         }
  }
 
- export default messagesComponentHTML
+ export default messagesComponent

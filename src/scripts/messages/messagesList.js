@@ -1,5 +1,5 @@
 import messagesAPI from "./messagesData.js"
-import messagesComponentHTML from "./messagesComponent.js"
+import messagesComponent from "./messagesComponent.js"
 
 //listing the message to the DOM
 //first function
@@ -8,12 +8,12 @@ import messagesComponentHTML from "./messagesComponent.js"
 
 const messageList = () => {
     //find location and clear the section
-    messageLocation = document.querySelector(".messages")
+    const messageLocation = document.querySelector(".message__Object--section")
     messageLocation.innerHTML = "";
 
     for(let messageObject of messagesAPI.messagesDataArray) {
         //iterate the data
-        const convertedMessageObject = messagesComponentHTML(messageObject)
+        const convertedMessageObject = messagesComponent.HTMLComponent(messageObject)
 
         messageLocation.innerHTML += convertedMessageObject
     }

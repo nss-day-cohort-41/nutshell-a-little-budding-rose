@@ -3,8 +3,8 @@
  const messagesComponent = {
      HTMLComponent: (messageObject) => {
         const messageHtmlString = `<section>
-        <section class="messageObject"><p>${messageObject.message}</p></section>
-        
+        <section class="messageObject"><p>${messageObject.message}</p><button id="message--DeleteButton--${messageObject.id}">Delete</button></section>
+       
         </section>`
         
         return messageHtmlString

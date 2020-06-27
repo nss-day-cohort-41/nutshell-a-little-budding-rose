@@ -15,6 +15,8 @@ const messageEventListener = () => {
         if(clickEvent.target.className == "newMessageButton") {
             messageInputLocation.innerHTML = messagesComponent.messageInputComponent()
         }
+
+        //saves messages
         else if(clickEvent.target.className == "message--SubmitButton") {
             const inputLocation = document.querySelector(".message--Input") 
             const messageInputValue = {"message": inputLocation.value}     
@@ -26,9 +28,16 @@ const messageEventListener = () => {
                     messageInputLocation.innerHTML = ""
                 })
             })
-
-            
+   
         }
+
+        //delete message event
+        else if(clickEvent.target.id.startsWith("message--DeleteButton--")) {
+            const cardDelete = event.target.id.split("--DeleteButton--")[1];
+            console.log(cardDelete)
+        }
+
+
     })
 }
 

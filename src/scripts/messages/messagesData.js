@@ -32,6 +32,12 @@ const messagesAPI = {
          
       
         
+    },
+
+    deletePostData: (id) => {
+
+
+
     }
 
 }

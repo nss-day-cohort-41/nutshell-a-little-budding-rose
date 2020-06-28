@@ -24,12 +24,12 @@
             "location": "event location"
         }
     ],
-    "tasks": [
+    "chores": [
         { 
-            "id": 1, 
-            "userId": 1, 
-            "task": "Take out garbage", 
-            "complete": false 
+            "choreId": 1,
+            "choreName": "Take out garbage",
+            "choreDate": "06-13-20",
+            "choreComplete": false
         }
         
     ],

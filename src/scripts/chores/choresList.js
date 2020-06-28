@@ -6,7 +6,8 @@ const makeChore = (choreId, choreName, choreDate) => {
     const newChore = {
         choreId: choreId,
         choreName: choreName,
-        choreDate: choreDate
+        choreDate: choreDate,
+        choreComplete: Boolean
     }
 
     return newChore;
@@ -21,3 +22,5 @@ console.log("this is the new chore", newChore1);
 console.log("this is the second chore", newChore2);
 
 export default makeChore;
+
+

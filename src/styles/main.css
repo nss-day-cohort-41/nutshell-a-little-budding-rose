@@ -1,3 +1,5 @@
+@import 'login.css';
+
 /* Delete comments before pushing final project */
 * {
     font-family: sans-serif;
@@ -8,14 +10,16 @@ section, article, header {
     border: 1px black solid;
 }
 
-/* For explanations on what's happening with flex see: https://css-tricks.com/almanac/properties/f/flex/ */
+/* For explanations on what's happening with flexbox see: https://css-tricks.com/almanac/properties/f/flex/ */
 .container {
     display: flex;
     flex-direction: row;
+    background-color: #9dc072
 }
 
 .container__left {
     flex: 1;
+    flex-direction: column;
 }
 
 .container__right {
@@ -33,4 +37,20 @@ section, article, header {
 
 .messages {
     flex: 1;
+}
+
+header {
+    background-color: #9dc072;
+}
+
+.nutshell {
+    color: #DDA15E;
+    -webkit-text-stroke: 1px black;
+    /* This adds a black outline to the header text. It was adding an outline to the 🌰 emoji too,
+    which looked bad on Windows so I separated the text and emoji with a span tag */
+}
+
+.chores, .friends_list, .news, .messages, .events {
+    background-color: rgba(255, 255, 255, .6)
+    /* rgba(255, 255, 255, .6) is white, and the last number controls the opacity %. .6 is 60% opacity */
 }

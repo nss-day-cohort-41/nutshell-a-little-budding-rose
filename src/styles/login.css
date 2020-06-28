@@ -1,0 +1,33 @@
+.log_in fieldset {
+    border: none;
+}
+
+/* .log_in {
+    border: 1px black solid;
+    width: 25%;
+} */
+
+#overlay {
+    position: fixed;
+    display: block;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:white;
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.log_in {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* -ms-transform: translate(-50%,-50%); */
+}
+
+.log_in p {
+    text-align: center;
+}

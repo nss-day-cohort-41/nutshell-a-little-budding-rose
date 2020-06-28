@@ -10,48 +10,42 @@
 </head>
 
 <body>
-    <header>
-        <h1>Nutshell</h1>
-    </header>
 
-    <article class="container">
-        <div class="container__left">
-            <section class="chores">Chores
-                <ul>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                </ul>
+<header>
+    <h1>🌰<span class="nutshell">Nutshell</span></h1>
+</header>
+
+
+<article class="container">
+    <div class="container__left">
+        <section class="chores">Chores
+            <ul>
+                <li>testtesttest</li>
+                <li>testtesttest</li>
+                <li>testtesttest</li>
+                <li>testtesttest</li>
+                <li>testtesttest</li>
+                <li>testtesttest</li>
+                <li>testtesttest</li>
+                <li>testtesttest</li>
+                <li>testtesttest</li>
+            </ul>
+        </section>
+    </div>
+        
+    <div class="container__right">
+        <section class="news">News
+            <ul>
+                <li>testtesttest</li>
+                <li>testtesttest</li>
+                <li>testtesttest</li>
+            </ul>
+        </section>
+            
+        <div class="container__friends">
+            <section class="friends_list">Friends
             </section>
-        </div>
-
-        <div class="container__right">
-            <section class="news">News
-                <ul>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                </ul>
-            </section>
-
-            <div class="container__friends">
-                <section class="friends_list">Friends</section>
-                <section class="messages">Messages
-                    <ul>
-                        <li>testtesttest</li>
-                        <li>testtesttest</li>
-                        <li>testtesttest</li>
-                    </ul>
-                </section>
-            </div>
-
-            <section class="events">Events
+            <section class="messages">Messages
                 <ul>
                     <li>testtesttest</li>
                     <li>testtesttest</li>
@@ -59,16 +53,53 @@
                 </ul>
             </section>
         </div>
+            
+        <section class="events">Events
+            <ul>
+                <li>testtesttest</li>
+                <li>testtesttest</li>
+                <li>testtesttest</li>
+            </ul>
+        </section>
+    </div> 
 
-        <section class="log_in"></section>
+    <div id ="overlay">
+        <section class="log_in">
+            <p>Welcome to 🌰Nutshell</p>
+            <form action="">
+                <fieldset>
+                    <input type="email" name="logInEmailField" id="logInEmailField" placeholder="Email">
+                    <br>
+                    <input type="password" name="logInPasswordField" id="logInPasswordField" placeholder="Password">
+                    <br>    
+                    <button type="button" id="logInButton">Log in</button>
+                </fieldset>
+            </form>
     
+            <form action="">
+                <fieldset>
+                    <input type="email" name="registerEmailField" id="registerEmailField" placeholder="Email">
+                    <br>
+                    <input type="username" name="registerUsernameField" id="registerUsernameField" placeholder="Username">
+                    <br>
+                    <input type="password" name="registerPasswordField" id="registerPasswordField" placeholder="Password">
+                    <br>
+                    <input type="password" name="registerConfirmPasswordField" id="registerConfirmPasswordField" placeholder="Confirm password">
+                    <br>   
+                    <button type="button" id="registerButton">Register</button>
+                </fieldset>
+            </form>
+        </section>
+    </div>
+
     </article>
 
 
-
-
-<script type="module" src="./scripts/main.js"></script>
-
+    <script type="module" src="./scripts/main.js"></script>
+    <script src="./scripts/users/usersComponent.js"></script>
+    <script src="./scripts/users/usersData.js"></script>
+    <script src="./scripts/users/usersList.js"></script>
+    
 </body>
 
 </html>

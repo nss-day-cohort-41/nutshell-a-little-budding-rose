@@ -35,6 +35,13 @@ const messageEventListener = () => {
         else if(clickEvent.target.id.startsWith("message--DeleteButton--")) {
             const cardDelete = event.target.id.split("--DeleteButton--")[1];
             console.log(cardDelete)
+
+            messagesAPI.deletePostData(cardDelete).then(() =>{
+                messagesAPI.messagesGetData().then(() => {
+                    messageList()
+                    
+                })
+            })
         }
 
 

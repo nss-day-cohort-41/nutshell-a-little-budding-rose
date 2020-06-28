@@ -21,7 +21,7 @@ const messagesAPI = {
     {
         
        
-        return fetch("http://localhost:8088/messages", {
+        return fetch(`${messagesAPI.messageUrl}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -36,7 +36,9 @@ const messagesAPI = {
 
     deletePostData: (id) => {
 
-
+        return fetch(`${messagesAPI.messageUrl}/${id}`, {
+        method: "DELETE"
+    }).then(response => response.json());
 
     }
 

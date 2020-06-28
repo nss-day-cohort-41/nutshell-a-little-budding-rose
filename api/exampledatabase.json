@@ -30,7 +30,14 @@
             "choreName": "Take out garbage",
             "choreDate": "06-13-20",
             "choreComplete": false
+        },
+        {
+            "choreId": 2,
+            "choreName": "Clean Fishtank",
+            "choreDate": "06-14-20",
+            "choreComplete": true
         }
+        
         
     ],
     "friends": [

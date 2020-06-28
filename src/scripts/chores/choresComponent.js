@@ -7,7 +7,18 @@ const API = {
         return fetch('${url}/chore')
         .then(response => response.json());
         
+    },
+    addAChore: (choreObject) => {
+        return fetch('${url}/chore', {
+            method: "POST",
+            headers: {
+                    "ccontentType": "application/json"
+            },
+            body: JSON.stringify(choreObject)
+        }).then(response => response.json());
+
     }
+
 }
 
 export default API; 

@@ -33,6 +33,20 @@ const messagesAPI = {
       
         
     },
+    updateEditMessage: (id, editObject) => {
+        return fetch(`${messagesAPI.messageUrl}/${id}`, {
+            method: "PUT",
+            headers: {
+            "Content-Type": "application/json"
+            },
+            body: JSON.stringify(editObject)
+        })
+       },
+
+    getUserMessageEntry: (id) => {
+        return fetch(`${messagesAPI.messageUrl}/${id}`)
+    .then(response => response.json());
+    },
 
     deletePostData: (id) => {
 

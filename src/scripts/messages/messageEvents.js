@@ -17,6 +17,7 @@ const messageEventListener = () => {
         }
 
         //saves messages
+        //must have the hidden value not be on the page in order to not have conflicts
         else if(clickEvent.target.className == "message--SubmitButton"  && !document.querySelector("#hiddenIdValue")) {
             const inputLocation = document.querySelector(".message--Input") 
             const messageInputValue = {"message": inputLocation.value}     
@@ -43,7 +44,7 @@ const messageEventListener = () => {
                 })
             })
         }
-
+        //populating the input boxes at the message
         else if(clickEvent.target.id.startsWith("message--EditButton--") && !document.querySelector("#hiddenIdValue")) {
             const cardEdit = event.target.id.split("--EditButton--")[1];
             console.log(cardEdit)

@@ -10,19 +10,11 @@
         
         return messageHtmlString
          },
-
+         //populates a text box to submit a message
          messageInputComponent: () => {
             const inputComponent = `<input class="message--Input" name="message__Input" type="text"><button class="message--SubmitButton">Submit</button>`
             return inputComponent
          },
-
-         messageEditComponent: (messageObject) => {
-
-
-           const editComponent = ``
-
-            return editComponent
-         }, 
 
 
          //factory function that will change the message sent inner html to hold the value for editing

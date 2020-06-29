@@ -43,7 +43,7 @@
     "messages": [
         { 
             "id": 1, 
-            "userId": 1, 
+            
             "message": "What's up?" 
         }
     ]

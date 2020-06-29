@@ -1,14 +1,29 @@
 
-
+const userID = 5;
  const messagesComponent = {
      HTMLComponent: (messageObject) => {
+        if(messageObject.userID == userID) {
         const messageHtmlString = `<section>
-        <section id="messageObject--${messageObject.id}" class="messageObject"><p>${messageObject.message}</p><button id="message--DeleteButton--${messageObject.id}">Delete</button>
+        
+        <section id="messageObject--${messageObject.id}" class="messageObject">
+        <p class="messages-title--${messageObject.userID}">${messageObject.userName}</p>
+        <br><p>${messageObject.message}</p>
+        <button id="message--DeleteButton--${messageObject.id}--${messageObject.userID}">Delete</button>
         <button id="message--EditButton--${messageObject.id}">Edit</button></section>
        
         </section>`
         
-        return messageHtmlString
+        return messageHtmlString}
+        else {
+           return `<section>
+        
+           <section id="messageObject--${messageObject.id}" class="messageObject">
+           <p class="messages-title--${messageObject.userID}">${messageObject.userName}</p>
+           <br><p>${messageObject.message}</p>
+           </section>
+          
+           </section>`
+        }
          },
          //populates a text box to submit a message
          messageInputComponent: () => {
@@ -22,12 +37,16 @@
             const messageInputBox = document.querySelector(`#messageObject--${messageObject.id}`)
 
             messageInputBox.innerHTML = `<input class="message--Input" name="message__Input" type="text">
-            <button class="message--SubmitButton">Submit</button>
+            <button class="message--SubmitButton">Save</button>
             <input type="hidden" id="hiddenIdValue" value="${messageObject.id}" />`
 
             const inputValue = messageObject.message
             const inputLocation = document.querySelector(".message--Input")
             inputLocation.value = inputValue
+         },
+
+         messageAddFreind: () => {
+
          }
  }
 

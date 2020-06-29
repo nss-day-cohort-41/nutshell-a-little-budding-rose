@@ -14,16 +14,10 @@ const createUserObject = (email, username, password) => {
     }
 }
 
-let userArray = []
-
-usersAPI.getUsers().then(
-    users => userArray.push(users)
-)
-
 document.querySelector("#registerButton").addEventListener("click", clickEvent => { 
     const newUserObject = createUserObject(registerEmail.value, registerUsername.value, registerPassword.value)
     if (registerEmail.value === "" || registerPassword.value === "" || registerConfirmPassword.value === "" || registerUsername.value === "") {
-        alert("Please complete all fields")
+        alert("Please complete all fields") 
     } else if (registerPassword.value !== registerConfirmPassword.value) {
         alert("Passwords don't match")
     } else {
@@ -36,6 +30,8 @@ document.querySelector("#logInButton").addEventListener("click", clickEvent => {
     if (logInEmail.value === "" || logInPassword.value === "") {
         alert("Please complete all fields")
     } else {
-        document.getElementById("overlay").style.display = "none";
+        sessionStorage.setItem("email", `${logInEmail.value}`)
+        document.querySelector(".user_info").innerHTML = makeUserComponent()
+        document.getElementById("overlay").style.display = "none"
     }
 })

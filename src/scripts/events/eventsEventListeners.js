@@ -8,8 +8,16 @@ const eventsTarget = document.querySelector(".events")
 
 const eventListeners = {
 
+        //event listener for New Event Button
+    createNewEventEntry: () => {
+        eventsTarget.addEventListener("click", event =>
+            if (event.target.id.startsWih("newEventbutton"))
+            )
+    },    
 
-        //event listener for save button
+
+
+        //event listener for Save Button
     saveEventEntry: () => {
         eventsTarget.addEventListener("click", event => {
             const hiddenEventId = document.querySelector("#entryId")
@@ -25,7 +33,7 @@ const eventListeners = {
     },
 
 
-        //event listener for delete button
+        //event listener for Delete Button
     deleteEventEntry: () => {
         eventsTarget.addEventListener("click", event => {
             if (event.target.id.startsWith("deleteEventButton--")) {
@@ -41,7 +49,7 @@ const eventListeners = {
 
 },   
 
-        //event listener for edit button
+        //event listener for Edit Button
     editEventEntry: () => {
         eventsTarget.addEventListener("click", event => {
             if(event.target.id.startsWith("editEventButton--")) {

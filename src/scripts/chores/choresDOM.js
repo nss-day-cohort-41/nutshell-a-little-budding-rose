@@ -11,6 +11,6 @@ const makeChoreHTML = ( choreObject ) => {
     return domElement
 }
 
-export default makeChoreHTML:
+export default makeChoreHTML;
 
-consol.log("tacos suck")
+console.log("tacos suck")

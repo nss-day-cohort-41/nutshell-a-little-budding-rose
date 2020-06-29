@@ -1,18 +1,18 @@
 //* created by Lacey *
 
-const url = "http:localhost:8088";
+const url = "http://localhost:8088";
 
 const API = {
     getAllChores: () => {
-        return fetch('${url}/chore')
+        return fetch(`${url}/chore`)
         .then(response => response.json());
         
     },
     addAChore: (choreObject) => {
-        return fetch('${url}/chore', {
+        return fetch(`${url}/chore`, {
             method: "POST",
             headers: {
-                    "ccontentType": "application/json"
+                    "contentType": "application/json"
             },
             body: JSON.stringify(choreObject)
         }).then(response => response.json());

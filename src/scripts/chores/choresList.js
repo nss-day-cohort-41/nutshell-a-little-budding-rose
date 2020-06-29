@@ -2,9 +2,9 @@
 
 console.log("Do your chores!");
 
-const makeChore = (choreId, choreName, choreDate) => {
+const makeChore = (id, choreName, choreDate) => {
     const newChore = {
-        choreId: choreId,
+        id: id,
         choreName: choreName,
         choreDate: choreDate,
         choreComplete: Boolean

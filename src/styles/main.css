@@ -50,7 +50,9 @@ header {
     which looked bad on Windows so I separated the text and emoji with a span tag */
 }
 
-.chores, .friends_list, .news, .messages, .events {
-    background-color: rgba(255, 255, 255, .6)
+.chores, .friends_list, .news, .messages, .events, .user_info {
+    background-color: rgba(255, 255, 255, .6);
     /* rgba(255, 255, 255, .6) is white, and the last number controls the opacity %. .6 is 60% opacity */
+    margin: .5em;
+    padding: .25em
 }

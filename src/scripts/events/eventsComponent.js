@@ -21,7 +21,7 @@ const eventToDOM = {
         return `
             <form action="">
 
-                <input type="hidden" id="entryId" value=""/>
+                <input type="hidden" id="hiddenEventEntryId" value=""/>
 
                 <fieldset>
                     <label for="eventDate">Date:</label>

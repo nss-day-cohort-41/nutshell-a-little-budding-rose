@@ -7,16 +7,18 @@ import API from "./eventsData.js"
 
 
 const makeEventList = (API) => {
+
+    const event = document.querySelector(".events")
+        //clearing data
+    event.innerHTML = ""
+
     for (const eventObject of API) {
 
         let eventHTML = eventToDOM.eventHTMLRepresentation(eventObject)
-
-        const event = document.querySelector(".events")
 
         event.innerHTML += eventHTML
 
     }
 }
-
 
 export default makeEventList

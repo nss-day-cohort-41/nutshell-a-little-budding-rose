@@ -13,12 +13,12 @@ const eventListeners = {
     saveEventEntry: () => {
         eventsTarget.addEventListener("click", event => {
             const hiddenEventId = document.querySelector("#entryId")
-                console.log("hidden id", hiddenEventId.value)
+                //console.log("hidden id", hiddenEventId.value)
             if (event.target.id.startsWith("saveEventButton--")) 
                 if(hiddenEventId.value !== "") {
                     API.saveEventEntry(eventId.value)
                     .then(API.getAllEvents())
-                   .then(makeEventList)
+                    .then(makeEventList)
                 }
             
         })
@@ -28,19 +28,21 @@ const eventListeners = {
         //event listener for delete button
     deleteEventEntry: () => {
         eventsTarget.addEventListener("click", event => {
-            if (event.target.id.startsWith(".deleteEventButton--")) {
+            if (event.target.id.startsWith("deleteEventButton--")) {
+                console.log("delete button clicked")
                 const eventToDelete = event.target.id.split("--")[1]
-                    console.log("Event to Delete", eventToDelete)
-                    API.deleteEventEntry(eventToDelete)
-                        .then(API.getAllEvents)
-                        .then(makeEventList)
+                    console.log("Delete button Clicked", eventToDelete)
+                    API.deleteEventEntry(eventToDelete) 
+                        .then(()=> {API.getAllEvents()
+                            .then((taco)=> {makeEventList(taco)})  
+                            })
             }
         })
 
 },   
 
         //event listener for edit button
-    editEventEntry: () =>
+    editEventEntry: () => {
         eventsTarget.addEventListener("click", event => {
             if(event.target.id.startsWith("editEventButton--")) {
                 console.log("Edit Button clicked")
@@ -49,6 +51,7 @@ const eventListeners = {
             API.updateEventForm(eventIdToEdit)
         }
     })
+}
 }
 
 export default eventListeners

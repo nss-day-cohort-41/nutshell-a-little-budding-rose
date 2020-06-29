@@ -29,35 +29,33 @@ const API = {
 
     editEventEntry:(eventsId) => {
         
-    }
-}
+    },
 
         //Function to UPDATE an event when it is edited
 
-    // updateEventEntry: (evenstId) => {
-    //     const hiddenEventEntryId = document.querySelector("#eventsId")
-    //     const dateInput = document.querySelector("#eventDate--")
-    //     const nameInput = document.querySelector("#eventName--")
-    //     const locationInput = document.querySelector("#eventLocation--")
+    updateEventEntry: (evenstId) => {
+        const hiddenEventEntryId = document.querySelector("#eventsId")
+        const dateInput = document.querySelector("#eventDate--")
+        const nameInput = document.querySelector("#eventName--")
+        const locationInput = document.querySelector("#eventLocation--")
 
-    //     fetch(`http://localhost:8088/events/${eventsId}`)
-    //         .then(response => response.json())
-    //         .then(event => {
-    //             hiddenEventEntryId.value = event.id
-    //             dateInput.value = event.eventDate
-    //             nameInput.value = event.eventName
-    //             locationInput.value = eventLocation
-
-    //         })
+        fetch(`http://localhost:8088/events/${eventsId}`)
+            .then(response => response.json())
+            .then(event => {
+                hiddenEventEntryId.value = event.eventsid
+                dateInput.value = event.eventDate
+                nameInput.value = event.eventName
+                locationInput.value = event.eventLocation
+             })
         
 
-    // },
+    },
 
-//         //Function to SAVE EDIT entry into the database
-//     saveEditedEventEntry: (eventsId) => {
+        //Function to SAVE EDIT entry into the database
+    saveEditedEventEntry: (eventsId) => {
 
-//     }
-// }
+    }
+}
 
 
 

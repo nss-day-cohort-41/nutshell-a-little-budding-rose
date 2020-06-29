@@ -56,11 +56,16 @@ const messageEventListener = () => {
         }
         //populating the input boxes at the message
         else if(clickEvent.target.id.startsWith("message--EditButton--") && !document.querySelector("#hiddenIdValue")) {
-            const cardEdit = event.target.id.split("--EditButton--")[1];
+            const cardEditIDandUser = event.target.id.split("--EditButton--")[1];
+            const cardEdit = cardEditIDandUser.split("--")[0];
+            const cardUserId = cardEditIDandUser.split("--")[1];
+            if(cardUserId == userId){
             console.log(cardEdit)
+            console.log(cardUserId)
             messagesAPI.getUserMessageEntry(cardEdit).then((messageObject) => {
                 messagesComponent.messageFactoryInputFunction(messageObject)
             })
+        }
         }
 
         //editing click event

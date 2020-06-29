@@ -9,7 +9,7 @@ const userID = 5;
         <p class="messages-title--${messageObject.userID}">${messageObject.userName}</p>
         <br><p>${messageObject.message}</p>
         <button id="message--DeleteButton--${messageObject.id}--${messageObject.userID}">Delete</button>
-        <button id="message--EditButton--${messageObject.id}">Edit</button></section>
+        <button id="message--EditButton--${messageObject.id}--${messageObject.userID}">Edit</button></section>
        
         </section>`
         

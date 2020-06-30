@@ -7,16 +7,12 @@
     font-family: sans-serif;
 }
 
-/* This is just to see where our boxes are */
-section, article, header {
-    border: 1px black solid;
-}
-
 /* For explanations on what's happening with flexbox see: https://css-tricks.com/almanac/properties/f/flex/ */
 .container {
     display: flex;
     flex-direction: row;
-    background-color: #9dc072
+    background-color: #9dc072;
+    border: 1px black solid;
 }
 
 .container__left {
@@ -43,6 +39,7 @@ section, article, header {
 
 header {
     background-color: #9dc072;
+    border: 1px black solid;
 }
 
 .nutshell {
@@ -56,5 +53,6 @@ header {
     background-color: rgba(255, 255, 255, .6);
     /* rgba(255, 255, 255, .6) is white, and the last number controls the opacity %. .6 is 60% opacity */
     margin: .5em;
-    padding: .25em
+    padding: .25em;
+    border: 1px black solid;
 }

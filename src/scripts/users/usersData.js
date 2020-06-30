@@ -1,3 +1,6 @@
+//Christopher McColgan
+//This module fetches from the JSON file
+
 const url = "http://localhost:8088"
 
 const usersAPI = {
@@ -17,12 +20,7 @@ const usersAPI = {
             },
             body: JSON.stringify(userObject)
         })
-    },
-    deleteJournalEntry: (id) => {
-        return fetch(`${url}/users/${id}`, {
-            method: "DELETE",
-        })
     }
 }
 
-// export default usersAPI
+export default usersAPI

@@ -1,8 +1,8 @@
-import makeUserComponent from "./usersComponent.js"
-import usersAPI from "./usersData.js"
-
 //Christopher McColgan
 //This module makes the login and register buttons work
+
+import makeUserComponent from "./usersComponent.js"
+import usersAPI from "./usersData.js"
 
 const logInEmail = document.querySelector("#logInEmailField")
 const logInPassword = document.querySelector("#logInPasswordField")
@@ -20,6 +20,13 @@ const createUserObject = (email, username, password) => {
     }
 }
 
+const clearRegisterInputs = () => {
+    registerEmail.value = ""
+    registerUsername.value = ""
+    registerPassword.value = ""
+    registerConfirmPassword.value = ""
+}
+
 const userButtons = {
     register: () => {
         document.querySelector("#registerButton").addEventListener("click", clickEvent => {
@@ -30,6 +37,9 @@ const userButtons = {
                 alert("Passwords don't match")
             } else {
                 usersAPI.saveUser(newUserObject)
+                    .then(() => {
+                        clearRegisterInputs()
+                    })
             }
         })
     },

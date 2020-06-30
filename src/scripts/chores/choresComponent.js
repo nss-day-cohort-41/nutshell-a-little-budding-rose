@@ -21,6 +21,11 @@ const API = {
         getAllChores : () => {
             return fetch (`${url}/chores`)
             then(response => response.json());
+        },
+        deleteChore: (id) => {
+            return fetch(`{url}/chore/${id}`, {
+                method: "DELETE"
+            }).then(response => response.json());
         }
 
 }

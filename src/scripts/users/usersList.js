@@ -1,3 +1,9 @@
+import makeUserComponent from "./usersComponent.js"
+import usersAPI from "./usersData.js"
+
+//Christopher McColgan
+//This module makes the login and register buttons work
+
 const logInEmail = document.querySelector("#logInEmailField")
 const logInPassword = document.querySelector("#logInPasswordField")
 
@@ -14,24 +20,38 @@ const createUserObject = (email, username, password) => {
     }
 }
 
-document.querySelector("#registerButton").addEventListener("click", clickEvent => { 
-    const newUserObject = createUserObject(registerEmail.value, registerUsername.value, registerPassword.value)
-    if (registerEmail.value === "" || registerPassword.value === "" || registerConfirmPassword.value === "" || registerUsername.value === "") {
-        alert("Please complete all fields") 
-    } else if (registerPassword.value !== registerConfirmPassword.value) {
-        alert("Passwords don't match")
-    } else {
-        usersAPI.saveUser(newUserObject)
-    }
-})
+const userButtons = {
+    register: () => {
+        document.querySelector("#registerButton").addEventListener("click", clickEvent => {
+            const newUserObject = createUserObject(registerEmail.value, registerUsername.value, registerPassword.value)
+            if (registerEmail.value === "" || registerPassword.value === "" || registerConfirmPassword.value === "" || registerUsername.value === "") {
+                alert("Please complete all fields")
+            } else if (registerPassword.value !== registerConfirmPassword.value) {
+                alert("Passwords don't match")
+            } else {
+                usersAPI.saveUser(newUserObject)
+            }
+        })
+    },
 
-
-document.querySelector("#logInButton").addEventListener("click", clickEvent => { 
-    if (logInEmail.value === "" || logInPassword.value === "") {
-        alert("Please complete all fields")
-    } else {
-        sessionStorage.setItem("email", `${logInEmail.value}`)
-        document.querySelector(".user_info").innerHTML = makeUserComponent()
-        document.getElementById("overlay").style.display = "none"
+    logIn: () => {
+        document.querySelector("#logInButton").addEventListener("click", clickEvent => {
+            if (logInEmail.value === "" || logInPassword.value === "") {
+                alert("Please complete all fields")
+            } else {
+                usersAPI.getUsers()
+                    .then(users => users.find(user => {
+                        if (user.email == logInEmail.value && user.password === logInPassword.value) {
+                            sessionStorage.setItem("activeUser", user.id)
+                            sessionStorage.setItem("activeUserUsername", user.username)
+                            document.querySelector(".user_info").innerHTML = makeUserComponent()
+                            document.getElementById("overlay").style.display = "none"
+                            console.log(user)
+                        }
+                    }))
+            }
+        })
     }
-})
+}
+
+export default userButtons

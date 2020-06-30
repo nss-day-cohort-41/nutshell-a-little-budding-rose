@@ -8,6 +8,7 @@ import eventToDOM from "./eventsComponent.js"
 
 const eventsTarget = document.querySelector(".events")
 const eventsFormTarget = document.querySelector(".eventsForm")
+const clearEventForm = document.querySelector(".newEventSection")
 
 const eventListeners = {
 
@@ -15,8 +16,7 @@ const eventListeners = {
     createNewEventEntry: () => {
         eventsFormTarget.addEventListener("click", event => {
             if(event.target.className === "newEventButton") {
-                console.log("new event button clicked")
-                eventsFormTarget.innerHTML = eventToDOM.newEventForm()
+                clearEventForm.innerHTML = eventToDOM.newEventForm()
             }
         })
     },  
@@ -24,8 +24,7 @@ const eventListeners = {
         //event listener for Save Button on new entry
     saveEventEntry: () => {
         eventsFormTarget.addEventListener("click", event => {
-            if (event.target.id.startsWith("saveEventButton--")) {
-                console.log("save event button clicked") 
+            if (event.target.id.startsWith("saveEventButton--")) { 
                 const eventDate = document.querySelector("#eventDate").value 
                 const eventName = document.querySelector("#eventName").value 
                 const eventLocation = document.querySelector("#eventLocation").value 
@@ -36,10 +35,16 @@ const eventListeners = {
                 }
                 if (newEvent.date !== "" && newEvent.name !== "" && newEvent.location !== "") {
                     API.saveEventEntry(newEvent)
+                    .then(()=> {API.getAllEvents()
+                        .then((event)=> {
+                            eventEntryForms.makeEventList(event)
+                            console.log("TEST")
+                            clearEventForm.innerHTML = ""})  
+                        })
                 } else {
-                    alert("Please complete all fields before saving.")
+                    alert("Please complete all fields.")
                 }
-                newEventForm.close()
+   
             }
         })
     },
@@ -48,9 +53,7 @@ const eventListeners = {
     deleteEventEntry: () => {
         eventsTarget.addEventListener("click", event => {
             if (event.target.id.startsWith("deleteEventButton--")) {
-                console.log("delete button clicked")
                 const eventToDelete = event.target.id.split("--")[1]
-                    console.log("Delete button Clicked", eventToDelete)
                     API.deleteEventEntry(eventToDelete) 
                         .then(()=> {API.getAllEvents()
                             .then((event)=> {eventEntryForms.makeEventList(event)})  

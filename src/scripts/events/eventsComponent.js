@@ -19,7 +19,7 @@ const eventToDOM = {
             //creating function to produce new event form
     newEventForm: () => {
         return `
-            <form action="">
+            <form action="" id="eventFormFields">
 
                 <input type="hidden" id="hiddenEventEntryId" value=""/>
 

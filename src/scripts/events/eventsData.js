@@ -19,7 +19,6 @@ const API = {
             },
             body: JSON.stringify(eventObject)
             })
-                .then(API.getAllEvents)
         },
 
             //Function to DELETE an event from the database

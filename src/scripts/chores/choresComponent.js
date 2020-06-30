@@ -16,8 +16,12 @@ const API = {
             },
             body: JSON.stringify(choreObject)
         }).then(response => response.json());
-
-    }
+    
+        }, 
+        getAllChores : () => {
+            return fetch (`${url}/chores`)
+            then(response => response.json());
+        }
 
 }
 

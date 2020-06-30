@@ -1,26 +1,26 @@
 //* created by Lacey *
 
-console.log("Do your chores!");
-
-const makeChore = (id, choreName, choreDate) => {
-    const newChore = {
-        id: id,
-        choreName: choreName,
-        choreDate: choreDate,
-        choreComplete: Boolean
-    }
-
-    return newChore;
-}
+import API from './choresComponent.js';
+import makeChoreHTML from './choresDOM.js';
 
 
-// id, name of chore, date 
-const newChore1 = makeChore(1,"Clean livingroom", "05-27-20")
-const newChore2 = makeChore(2,"Unload dishwasher", "05-28-20")
+const choreContainer = document.querySelector("#choreContainer");
 
-console.log("this is the new chore", newChore1);
-console.log("this is the second chore", newChore2);
+const makeChoreList = ( => {
+    choreContainer.innerHTML = "";
+    API.getAllChores()
+    .then((choresArray) => {
+        const allChoresNames = choresArray.map(item => {
+                return item.typeId ===1;
+        });
+        console.log("all chores list", allChores);
+        choreContainer.innerHTML += allChoresNames.join("");
 
-export default makeChore;
+        const firstChore = choreArray.find(item => {
+            return item.choreId === 2;
+        })
+        console.log("man i hope chore list works")
+    })
+})
 
-
+export default makeChoreList;

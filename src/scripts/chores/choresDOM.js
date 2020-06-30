@@ -6,6 +6,7 @@ const makeChoreHTML = ( choreObject ) => {
     <p>${choreObject.choreDate}</p>
     <p>${choreObject.choreComplete}</p>
     <button id="deleteChore--${choreObject.id}">Delete</button>
+    <button id="editChore--${choreObject.id}">Edit</button>
     </section>
     `
     return domElement

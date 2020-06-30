@@ -4,9 +4,14 @@ import makeChore from "./chores/choresData.js"
 import makeChoreList from "./chores/choresList.js"
 import messageEventListener from "./messages/messageEvents.js"
 import userButtons from "./users/usersList.js"
+import  { newsButtons, showNewsEntries } from "./news/newsList.js"
 
 userButtons.logIn()
 userButtons.register()
+
+showNewsEntries()
+newsButtons.save()
+newsButtons.deleteEdit()
 
 messagesAPI.messagesGetData()
 .then(() => {

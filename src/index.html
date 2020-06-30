@@ -43,11 +43,19 @@
         
     <div class="container__right">
         <section class="news">News
-            <ul>
-                <li>testtesttest</li>
-                <li>testtesttest</li>
-                <li>testtesttest</li>
-            </ul>
+            <section class="news__articles"></section>
+            <section class="news__input">
+                <form action="">
+                    <input type="hidden" id="news__userID" value="">
+                    <input type="hidden" id="news__articleID" value="">
+                    <fieldset>
+                        <input type="text" name="newsTitleField" id="newsTitleField" placeholder="Article title">
+                        <input type="url" name="newsUrlField" id="newsUrlField" placeholder="Article URL">
+                        <input type="text" name="newsSynopsisField" id="newsSynopsisField" placeholder="Description">
+                        <button type="button" id="newsSave">Save</button>
+                    </fieldset>
+                </form>
+            </section>
         </section>
             
         <div class="container__friends">
@@ -67,7 +75,7 @@
                     <li>testtesttest</li>
                 </ul>
             </section>
-        </div>   
+        </div>
 
         <!-- <div id ="overlay">
             <section class="log_in">
@@ -86,7 +94,7 @@
                     <fieldset>
                         <input type="email" name="registerEmailField" id="registerEmailField" placeholder="Email">
                         <br>
-                        <input type="username" name="registerUsernameField" id="registerUsernameField" placeholder="Username">
+                        <input type="text" name="registerUsernameField" id="registerUsernameField" placeholder="Username">
                         <br>
                         <input type="password" name="registerPasswordField" id="registerPasswordField" placeholder="Password">
                         <br>
@@ -96,7 +104,7 @@
                     </fieldset>
                 </form>
             </section>
-        </div> -->
+        </div> --> 
     </article>
     
 </body>

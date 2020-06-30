@@ -12,7 +12,7 @@ const friendsEventListener = () => {
     //add a friend that's not in their list messages-title--  messageObject
     
     const messagesLocationEvent = document.querySelector(".message__Object--section")
-    const addFriendLocationInMessageObject = document.querySelector(.)
+    // const addFriendLocationInMessageObject = document.querySelector(.)
     messagesLocationEvent.addEventListener("click", clickEvent => {
         if(clickEvent.target.className.startsWith("messages-title--")) {
             const getUserInfo = event.target.className.split("messages-title--")[1];
@@ -23,7 +23,7 @@ const friendsEventListener = () => {
            } 
            //==================================
            //problem the friends pop up works but is ugly
-           
+
         }
     })
 

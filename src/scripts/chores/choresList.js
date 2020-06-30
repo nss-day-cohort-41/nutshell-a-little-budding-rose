@@ -6,7 +6,7 @@ import makeChoreHTML from './choresDOM.js';
 
 const choreContainer = document.querySelector("#choreContainer");
 
-const makeChoreList = ( => {
+const makeChoreList = () => {
     choreContainer.innerHTML = "";
     API.getAllChores()
     .then((choresArray) => {
@@ -21,6 +21,6 @@ const makeChoreList = ( => {
         })
         console.log("man i hope chore list works")
     })
-})
+}
 
 export default makeChoreList;

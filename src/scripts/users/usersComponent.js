@@ -3,7 +3,7 @@
 
 const makeUserComponent = () => {
     const string =
-        `Welcome, ${sessionStorage.getItem("username")}!`
+        `Welcome, ${sessionStorage.getItem("activeUserUsername")}!`
     return string
 }
 

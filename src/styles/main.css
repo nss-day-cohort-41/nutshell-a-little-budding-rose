@@ -1,6 +1,7 @@
 @import "./messageStyle.css";
 @import "./friends.css";
 @import 'login.css';
+@import 'news.css';
 
 /* Delete comments before pushing final project */
 * {

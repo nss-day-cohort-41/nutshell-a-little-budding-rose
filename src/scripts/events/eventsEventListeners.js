@@ -24,18 +24,25 @@ const eventListeners = {
         //event listener for Save Button on new entry
     saveEventEntry: () => {
         eventsFormTarget.addEventListener("click", event => {
-            const hiddenEventId = document.querySelector("#entryId")
-            if (event.target.id.startsWith("saveEventButton--"))
-                //console.log("save event button clicked") 
-                if(hiddenEventId.value !== "") {
-                    API.saveEventEntry(eventId.value)
-                    .then(API.getAllEvents())
-                    .then(eventEntryForms.makeEventList())
+            if (event.target.id.startsWith("saveEventButton--")) {
+                console.log("save event button clicked") 
+                const eventDate = document.querySelector("#eventDate").value 
+                const eventName = document.querySelector("#eventName").value 
+                const eventLocation = document.querySelector("#eventLocation").value 
+                const newEvent = {
+                    date: eventDate,
+                    name: eventName,
+                    location: eventLocation
                 }
-            
+                if (newEvent.date !== "" && newEvent.name !== "" && newEvent.location !== "") {
+                    API.saveEventEntry(newEvent)
+                } else {
+                    alert("Please complete all fields before saving.")
+                }
+                newEventForm.close()
+            }
         })
     },
-
 
         //event listener for Delete Button
     deleteEventEntry: () => {

@@ -18,7 +18,8 @@ const API = {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(eventObject)
-            }).then((response) => response.json());
+            })
+                .then(API.getAllEvents)
         },
 
             //Function to DELETE an event from the database

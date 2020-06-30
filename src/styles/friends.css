@@ -1,0 +1,13 @@
+#addFriendMessages {
+    background-color: black;
+    color: white;
+    z-index: 1;
+}
+
+.friendsBack {
+    color: red;
+}
+
+.addFriend {
+    color: yellow;
+}

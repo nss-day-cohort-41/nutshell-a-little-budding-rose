@@ -1,6 +1,8 @@
 //add an event listner to message section
 //if click is on new button
 //add input box text
+//===================
+//add if states to collect data before loading
 //post 
 
 import messagesComponent from "./messagesComponent.js"

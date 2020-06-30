@@ -12,7 +12,7 @@ const clearEventForm = document.querySelector(".newEventSection")
 
 const eventListeners = {
 
-        //event listener for New Event Button, opens new event form
+        //event listener for New Event Button, opens new event form then closes it when saved
     createNewEventEntry: () => {
         eventsFormTarget.addEventListener("click", event => {
             if(event.target.className === "newEventButton") {
@@ -38,7 +38,6 @@ const eventListeners = {
                     .then(()=> {API.getAllEvents()
                         .then((event)=> {
                             eventEntryForms.makeEventList(event)
-                            console.log("TEST")
                             clearEventForm.innerHTML = ""})  
                         })
                 } else {
@@ -63,32 +62,19 @@ const eventListeners = {
 
 },   
 
-    updateEventForm: (eventObject) => {
-        const hiddenEventEntryId = document.querySelector("#eventsId")
-        const dateInput = document.querySelector("#eventDate--")
-        const nameInput = document.querySelector("#eventName--")
-        const locationInput = document.querySelector("#eventLocation--")
 
-
-        hiddenEventEntryId.value = eventObject.eventsId;
-        dateInput.value = eventObject.eventDate;
-        nameInput.value = eventObject.eventName;
-        locationInput.value = eventObject.eventLocation;
-
-},
-
-        //event listener for Edit Button
+        //event listener for Edit Button that opens and populates fields with selected event
     editEventEntry: () => {
         eventsTarget.addEventListener("click", event => {
             if(event.target.id.startsWith("editEventButton--")) {
-                console.log("Edit Button clicked")
-            const eventIdToEdit = event.target.id.split("--")[1]
-                console.log("Event to Edit", eventIdToEdit)
-            updateEventForm(eventIdToEdit)
-        }
-    })
-},
-
+                //clearEventForm.innerHTML = eventToDOM.newEventForm()
+                const eventToEdit = event.target.id.split("--")[1];
+                API.getSingleEvent(eventToEdit)
+                .then(eventToEdit => eventToDOM.populateEventForm(eventToEdit))
+                .then(clearEventForm.innerHTML = eventToDOM.newEventForm())
+            }
+        })
+    }
 
 }
 

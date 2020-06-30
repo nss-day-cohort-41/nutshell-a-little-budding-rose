@@ -3,7 +3,7 @@
 
 
 import eventToDOM from "./eventsComponent.js"
-import API from "./eventsData.js"
+
 
 
 
@@ -27,7 +27,7 @@ const eventEntryForms = {
 
     makeEventForm: () => {
 
-        for (const eventForm of taco) {
+        for (const eventForm of event) {
 
             let eventsForm = eventToDOM.newEventForm(eventForm)
 

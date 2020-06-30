@@ -1,9 +1,9 @@
-//
+//This module containts functions that will display to the DOM
 //Created By: Kelley Crittenden
 
 
 const eventToDOM = {
-
+        //Saved Events
     eventHTMLRepresentation: (eventObject) => {
         return `<section class="events">
             <div class="date">Date: ${eventObject.date}</div>
@@ -41,6 +41,21 @@ const eventToDOM = {
             </form>    
 
             <button id="saveEventButton--">Save Event</button>`
+    },
+
+
+        //function to populate New Event Form with a previously saved event
+    populateEventForm: (eventObject) => {
+        const hiddenEventEntryId = document.querySelector("#hiddenEventEntryId");
+        const dateInput = document.querySelector("#eventDate");
+        const nameInput = document.querySelector("#eventName");
+        const locationInput = document.querySelector("#eventLocation");
+
+
+        hiddenEventEntryId.value = eventObject.hiddenEventEntryId;
+        dateInput.value = eventObject.date;
+        nameInput.value = eventObject.name;
+        locationInput.value = eventObject.location;
     }
 }
 

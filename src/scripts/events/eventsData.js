@@ -19,7 +19,7 @@ const API = {
             },
             body: JSON.stringify(eventObject)
             })
-        },
+    },
 
             //Function to DELETE an event from the database
     deleteEventEntry: (eventsId) => {
@@ -28,19 +28,13 @@ const API = {
             }).then((response) => response.json());
     },
 
-    // editEventEntry:(eventsId) => {
-        
-    // },
 
-        //Function to UPDATE an event when it is edited
-    
-    
+            //Function to get a single event for editing
+    getSingleEvent: (eventsId) => {
+        return fetch(`http://localhost:8088/events/${eventsId}`)
+                .then(response => response.json());
+    },
 
-
-        //Function to SAVE EDIT entry into the database
-    //saveEditedEventEntry: (eventsId) => {
-
-    //}
 }
 
 

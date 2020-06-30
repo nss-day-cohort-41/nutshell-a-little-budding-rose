@@ -3,6 +3,10 @@ import messageList from "./messages/messagesList.js"
 import makeChore from "./chores/choresData.js"
 import makeChoreList from "./chores/choresList.js"
 import messageEventListener from "./messages/messageEvents.js"
+import userButtons from "./users/usersList.js"
+
+userButtons.logIn()
+userButtons.register()
 
 messagesAPI.messagesGetData()
 .then(() => {

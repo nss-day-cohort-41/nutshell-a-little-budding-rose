@@ -11,7 +11,7 @@ const eventsFormTarget = document.querySelector(".eventsForm")
 
 const eventListeners = {
 
-        //event listener for New Event Button
+        //event listener for New Event Button, opens new event form
     createNewEventEntry: () => {
         eventsFormTarget.addEventListener("click", event => {
             if(event.target.className === "newEventButton") {
@@ -25,8 +25,8 @@ const eventListeners = {
     saveEventEntry: () => {
         eventsFormTarget.addEventListener("click", event => {
             const hiddenEventId = document.querySelector("#entryId")
-                //console.log("hidden id", hiddenEventId.value)
-            if (event.target.id.startsWith("saveEventButton--")) 
+            if (event.target.id.startsWith("saveEventButton--"))
+                //console.log("save event button clicked") 
                 if(hiddenEventId.value !== "") {
                     API.saveEventEntry(eventId.value)
                     .then(API.getAllEvents())

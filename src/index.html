@@ -20,18 +20,25 @@
         <div class="container__left">
             <section class="user_info">
             </section>
+
             <section class="chores">Chores
-                <ul>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                    <li>testtesttest</li>
-                </ul>
+                <form>
+                    <input type="hidden" id="id" value="" />
+                    <fieldset class="fieldset">
+                        <label for="choreName">Chore Name</label>
+                        <input type="text" name="choreName" id="choreName"  placeholder="Enter Chore Name Here">
+                    </fieldset>
+                    <fieldset class="fieldset">
+                        <label for="choreDate">Date</label>
+                        <input type="date" name="choreDate" id="choreDate"></date>
+                    </fieldset>
+                   
+                    
+                    <button id="saveChore">Save Chore</button>
+                    <button id="editChore">Edit Chore</button>
+                    <button id="deleteChore">Delete Chore</button>
+                </form>
+
             </section>
     </div>
         
@@ -96,7 +103,7 @@
                     </fieldset>
                 </form>
             </section>
-        </div>
+        </div> 
     </article>
     
 </body>

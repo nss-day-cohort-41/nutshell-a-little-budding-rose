@@ -19,6 +19,18 @@ messagesAPI.messagesGetData()
 })
 messageEventListener()
 
+import API from './events/eventsData.js';
+import eventEntryForms from "./events/eventsList.js"
+import eventListeners from "./events/eventsEventListeners.js"
+
+API.getAllEvents ()
+    .then(eventEntryForms.makeEventList)
+
+
+eventListeners.deleteEventEntry()
+eventListeners.editEventEntry()
+eventListeners.saveEventEntry()
+eventListeners.createNewEventEntry()
 
 import API from './chores/choresComponent.js';
 

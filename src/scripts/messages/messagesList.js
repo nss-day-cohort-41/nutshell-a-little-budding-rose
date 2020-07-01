@@ -7,6 +7,7 @@ import messagesComponent from "./messagesComponent.js"
 
 
 const messageList = () => {
+    console.log("test")
     //find location and clear the section
     const messageLocation = document.querySelector(".message__Object--section")
     messageLocation.innerHTML = "";

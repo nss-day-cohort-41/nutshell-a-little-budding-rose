@@ -1,57 +1,58 @@
 {
     "users": [
-        {
-            "id": 1, 
-            "email": "me@me.com", 
-            "password": "xxxxxxxxxxxxxxxxxxxxx"
-        }
+      {
+        "id": 1,
+        "email": "ilovenuts@gmail.com",
+        "password": "test",
+        "username": "Sandy Cheeks"
+      }
     ],
     "articles": [
-        {
-            "id": 1,
-            "userId": 1,
-            "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
-            "title": "Wormholes Allow Information to Escape Black Holes",
-            "synopsis": "Check out this recent discovery about workholes"
-        }
+      {
+        "url": "http://www.google.com",
+        "title": "What Kind of Nut Are You?",
+        "synopsis": "Buzzfeed quiz",
+        "userId": "1",
+        "id": 1
+      },
+      {
+        "url": "http://www.google.com",
+        "title": "Where Have All the Nuts Gone?",
+        "synopsis": "Nuts missing",
+        "userId": "1",
+        "id": 2
+      }
     ],
     "events": [
-        {
-            "id": 1,
-            "userId": 1,
-            "name": "example event",
-            "date": "2021-01-01",
-            "location": "event location"
-        }
+      {
+        "id": 1,
+        "userId": "1",
+        "name": "Hibernate",
+        "date": "2020-09-01",
+        "location": "Nest"
+      }
     ],
     "chores": [
-        { 
-            "id": 1,
-            "choreName": "Take out garbage",
-            "choreDate": "06-13-20",
-            "choreComplete": false
-        },
-        {
-            "id": 2,
-            "choreName": "Clean Fishtank",
-            "choreDate": "06-14-20",
-            "choreComplete": true
-        }
-        
-        
+      {
+        "id": 1,
+        "userId": "1",
+        "task": "Hide nuts",
+        "complete": false
+      }
     ],
     "friends": [
-        {
-            "id": 1, 
-            "userId": 1, 
-            "following": 3
-        }
+      {
+        "id": 1,
+        "userId": "1",
+        "following": 3
+      }
     ],
     "messages": [
-        { 
-            "id": 1, 
-            
-            "message": "What's up?" 
-        }
+      {
+        "message": "Thanks for the add! 😍",
+        "userID": "1",
+        "userName": "Gavin Swofford",
+        "id": 1
+      }
     ]
-}
+  }

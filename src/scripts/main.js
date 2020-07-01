@@ -13,23 +13,28 @@ import eventListeners from "./events/eventsEventListeners.js"
 
 
 
+const renderPage = () => {
+    showNewsEntries()
+    
+    messagesAPI.messagesGetData()
+    .then(() => {
+        messageList();
+    })
+    API.getAllEvents ()
+        .then(eventEntryForms.makeEventList)
+}
+
 userButtons.logIn()
 userButtons.register()
+userButtons.logOut()
 
-showNewsEntries()
 newsButtons.save()
 newsButtons.deleteEdit()
 
-messagesAPI.messagesGetData()
-.then(() => {
-    messageList();
-})
 messageEventListener()
 
 ///// EVENTS SECTION //////
 
-API.getAllEvents ()
-    .then(eventEntryForms.makeEventList)
 
 eventListeners.deleteEventEntry()
 eventListeners.editEventEntry()
@@ -78,3 +83,6 @@ saveChoreButton.addEventListener("click", event => {
         console.log("gee i hope this saves")
     }
 })
+
+
+export default renderPage

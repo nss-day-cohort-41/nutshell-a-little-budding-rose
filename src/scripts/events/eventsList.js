@@ -1,11 +1,8 @@
-// This module 
+// This module renders to the DOM
 //Created by: Kelley Crittenden
 
 
 import eventToDOM from "./eventsComponent.js"
-
-
-
 
 const eventEntryForms = {
 
@@ -17,9 +14,12 @@ const eventEntryForms = {
 
     for (const eventObject of API) {
 
+        if(eventObject.userId === sessionStorage.getItem("activeUser")) {
+
         let eventHTML = eventToDOM.eventHTMLRepresentation(eventObject)
 
         events.innerHTML += eventHTML
+        }
 
     }
 },

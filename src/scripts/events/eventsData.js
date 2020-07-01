@@ -1,15 +1,14 @@
 //This module contains all fetches to the Events Database
 //Created by: Kelley Crittenden
 
-const API = {
+const eventsAPI = {
 
             //Function to GET ALL the events from the database
     getAllEvents: () => {
         return fetch("http://localhost:8088/events")
         .then((response) => response.json());
     },
-            //Function 
-
+    
             //Function to SAVE NEW event to the database
     saveEventEntry: (eventObject) => {
         return fetch("http://localhost:8088/events", {
@@ -40,4 +39,4 @@ const API = {
 
 
 
-export default API;
+export default eventsAPI;

@@ -1,10 +1,23 @@
 //This module containts functions that will display to the DOM
 //Created By: Kelley Crittenden
 
+import eventsAPI from "./eventsData.js";
+
+// const sortedEvents = (eventsAPI.getAllEvents) => {
+//     return eventsAPI.getAllEvents.sort(function(a, b){
+//         return new Date(b.date) - new Date(a.date);
+//     });
+// }
+
+// sortedEvents(eventsAPI.getAllEvents);
+
+// console.log(sortedEvents)
 
 const eventToDOM = {
-        //Saved Events
+
+        //Saved Events display on DOM
     eventHTMLRepresentation: (eventObject) => {
+
         return `<section class="events">
             <div class="date">Date: ${eventObject.date}</div>
             <div class="name">Name: ${eventObject.name}</div>
@@ -14,13 +27,11 @@ const eventToDOM = {
             </section>`
     },
 
-
-
-            //creating function to produce new event form
+        //creating function to produce new event form
     newEventForm: () => {
         return `
             <form action="" id="eventFormFields">
-
+                <input type="hidden" id="eventUserId" value =""/>
                 <input type="hidden" id="hiddenEventEntryId" value=""/>
 
                 <fieldset>

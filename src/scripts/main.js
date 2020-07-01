@@ -7,6 +7,10 @@ import friendsEventListener from "./friends/friendsEvents.js"
 import userButtons from "./users/usersList.js"
 import  { newsButtons, showNewsEntries } from "./news/newsList.js"
 import choresAPI from "./chores/choresComponent.js"
+import APIE from "./events/eventsData.js"
+import eventEntryForms from "./events/eventsList.js"
+import eventListeners from "./events/eventsEventListeners.js"
+// import getFriendsData from "./friends/getFriendsAfterLoad.js"
 
 userButtons.logIn()
 userButtons.register()
@@ -28,8 +32,9 @@ messagesAPI.messagesGetData()
 .then(() => {
     messageList()
     friendsEventListener()
-
+    
 })
+
 messageEventListener()
 
 

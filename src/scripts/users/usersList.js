@@ -3,6 +3,8 @@
 
 import makeUserComponent from "./usersComponent.js"
 import usersAPI from "./usersData.js"
+import getFriendsData from "../friends/getFriendsAfterLoad.js"
+
 
 const logInEmail = document.querySelector("#logInEmailField")
 const logInPassword = document.querySelector("#logInPasswordField")
@@ -57,6 +59,7 @@ const userButtons = {
                             document.querySelector(".user_info").innerHTML = makeUserComponent()
                             document.getElementById("overlay").style.display = "none"
                             console.log(user)
+                            getFriendsData(user)
                         }
                     }))
             }

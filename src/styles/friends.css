@@ -11,3 +11,7 @@
 .addFriend {
     color: yellow;
 }
+
+.singleFriendObject {
+    border: solid 1px royalblue;
+}

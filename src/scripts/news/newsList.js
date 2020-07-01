@@ -30,12 +30,13 @@ const updateFormFields = (newsObj) => {
     newsTitleInput.value = newsObj.title
     newsUrlInput.value = newsObj.url
     newsSynopsisInput.value = newsObj.synopsis
-    newsObj.userId = sessionStorage.getItem("activeUser")
 }
 
 const renderNewsEntries = (articles) => {
     for (const article of articles) {
-        document.querySelector(".news__articles").innerHTML += makeNewsEntryComponent(article)
+        if (article.userId === sessionStorage.getItem("activeUser")) {
+            document.querySelector(".news__articles").innerHTML += makeNewsEntryComponent(article)
+        }
     }
 }
 

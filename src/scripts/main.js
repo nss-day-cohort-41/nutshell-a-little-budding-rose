@@ -3,40 +3,40 @@ import messageList from "./messages/messagesList.js"
 import makeChore from "./chores/choresData.js"
 import makeChoreList from "./chores/choresList.js"
 import messageEventListener from "./messages/messageEvents.js"
-import friendsEventListener from "./friends/friendsEvents.js"
 import userButtons from "./users/usersList.js"
 import  { newsButtons, showNewsEntries } from "./news/newsList.js"
 import choresAPI from "./chores/choresComponent.js"
-import APIE from "./events/eventsData.js"
-import eventEntryForms from "./events/eventsList.js"
-import eventListeners from "./events/eventsEventListeners.js"
-// import getFriendsData from "./friends/getFriendsAfterLoad.js"
+
+const renderPage = () => {
+    showNewsEntries()
+    
+    messagesAPI.messagesGetData()
+    .then(() => {
+        messageList();
+    })
+    API.getAllEvents ()
+        .then(eventEntryForms.makeEventList)
+}
 
 userButtons.logIn()
 userButtons.register()
+userButtons.logOut()
 
-APIE.getAllEvents ()
-    .then(eventEntryForms.makeEventList)
+newsButtons.save()
+newsButtons.deleteEdit()
+
+messageEventListener()
+
+import API from './events/eventsData.js';
+import eventEntryForms from "./events/eventsList.js"
+import eventListeners from "./events/eventsEventListeners.js"
+
 
 
 eventListeners.deleteEventEntry()
 eventListeners.editEventEntry()
 eventListeners.saveEventEntry()
 eventListeners.createNewEventEntry()
-
-showNewsEntries()
-newsButtons.save()
-newsButtons.deleteEdit()
-
-messagesAPI.messagesGetData()
-.then(() => {
-    messageList()
-    friendsEventListener()
-    
-})
-
-messageEventListener()
-
 
 
 
@@ -82,3 +82,6 @@ saveChoreButton.addEventListener("click", event => {
         console.log("gee i hope this saves")
     }
 })
+
+
+export default renderPage

@@ -6,6 +6,12 @@ import messageEventListener from "./messages/messageEvents.js"
 import userButtons from "./users/usersList.js"
 import  { newsButtons, showNewsEntries } from "./news/newsList.js"
 import choresAPI from "./chores/choresComponent.js"
+import API from './events/eventsData.js';
+import eventEntryForms from "./events/eventsList.js"
+import eventListeners from "./events/eventsEventListeners.js"
+
+
+
 
 userButtons.logIn()
 userButtons.register()
@@ -20,20 +26,15 @@ messagesAPI.messagesGetData()
 })
 messageEventListener()
 
-import eventsAPI from './events/eventsData.js';
-import eventEntryForms from "./events/eventsList.js"
-import eventListeners from "./events/eventsEventListeners.js"
+///// EVENTS SECTION //////
 
-eventsAPI.getAllEvents ()
+API.getAllEvents ()
     .then(eventEntryForms.makeEventList)
-
 
 eventListeners.deleteEventEntry()
 eventListeners.editEventEntry()
 eventListeners.saveEventEntry()
 eventListeners.createNewEventEntry()
-
-
 
 ////////////////////////////////////////////////////////
 

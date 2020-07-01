@@ -14,9 +14,12 @@ const eventEntryForms = {
 
     for (const eventObject of API) {
 
+        if(eventObject.userId === sessionStorage.getItem("activeUser")) {
+
         let eventHTML = eventToDOM.eventHTMLRepresentation(eventObject)
 
         events.innerHTML += eventHTML
+        }
 
     }
 },

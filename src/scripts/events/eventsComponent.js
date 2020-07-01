@@ -31,7 +31,7 @@ const eventToDOM = {
     newEventForm: () => {
         return `
             <form action="" id="eventFormFields">
-
+                <input type="hidden" id="eventUserId" value =""/>
                 <input type="hidden" id="hiddenEventEntryId" value=""/>
 
                 <fieldset>

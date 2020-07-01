@@ -28,8 +28,10 @@ const eventListeners = {
             if (event.target.id.startsWith("saveEventButton--")) { 
                 const eventDate = document.querySelector("#eventDate").value 
                 const eventName = document.querySelector("#eventName").value 
-                const eventLocation = document.querySelector("#eventLocation").value 
+                const eventLocation = document.querySelector("#eventLocation").value
+                const eventUserId = sessionStorage.getItem("activeUser")
                 const newEvent = {
+                    user: eventUserId,
                     date: eventDate,
                     name: eventName,
                     location: eventLocation

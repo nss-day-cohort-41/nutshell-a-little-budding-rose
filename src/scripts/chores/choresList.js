@@ -20,7 +20,6 @@ const makeChoreList = () => {
         const firstChore = choreArray.find(item => {
             return item.choreId === 2;
         })
-        console.log("man i hope chore list works")
 
         //loop through the choresArray and display on the dom
 		choreArray.forEach(item => {
@@ -33,5 +32,4 @@ const makeChoreList = () => {
 
 export default makeChoreList;
 
-console.log("chore list working")
 

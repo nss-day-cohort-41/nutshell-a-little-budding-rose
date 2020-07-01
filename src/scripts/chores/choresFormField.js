@@ -15,4 +15,4 @@ const updateFormFields = (choreObject) => {
 
 export default updateFormFields;
 
-console.log("form field working")
+

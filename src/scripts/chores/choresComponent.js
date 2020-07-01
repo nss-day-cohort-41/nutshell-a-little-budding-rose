@@ -38,4 +38,3 @@ const choresAPI = {
 
 export default choresAPI; 
 
-console.log("chores component working")

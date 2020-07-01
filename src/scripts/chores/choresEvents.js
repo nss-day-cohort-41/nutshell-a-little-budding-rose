@@ -30,5 +30,3 @@ export default {
         })
     }
 }
-
-console.log("events working")

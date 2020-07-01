@@ -15,4 +15,3 @@ const makeChoreHTML = ( choreObject ) => {
 
 export default makeChoreHTML;
 
-console.log("dom is working")

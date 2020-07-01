@@ -6,9 +6,21 @@ import messageEventListener from "./messages/messageEvents.js"
 import friendsEventListener from "./friends/friendsEvents.js"
 import userButtons from "./users/usersList.js"
 import  { newsButtons, showNewsEntries } from "./news/newsList.js"
+import APIE from './events/eventsData.js';
+import eventEntryForms from "./events/eventsList.js"
+import eventListeners from "./events/eventsEventListeners.js"
 
 userButtons.logIn()
 userButtons.register()
+
+APIE.getAllEvents ()
+    .then(eventEntryForms.makeEventList)
+
+
+eventListeners.deleteEventEntry()
+eventListeners.editEventEntry()
+eventListeners.saveEventEntry()
+eventListeners.createNewEventEntry()
 
 showNewsEntries()
 newsButtons.save()

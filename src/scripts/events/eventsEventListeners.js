@@ -78,4 +78,9 @@ const eventListeners = {
 
 }
 
+<<<<<<< HEAD
 export default eventListeners
+=======
+export default eventListeners
+
+>>>>>>> master

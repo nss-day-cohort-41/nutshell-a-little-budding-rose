@@ -1,9 +1,9 @@
-//This module contains functions that will display to the DOM
+//This module containts functions that will display to the DOM
 //Created By: Kelley Crittenden
 
 
 const eventToDOM = {
-        //Function to display saved events
+        //Saved Events
     eventHTMLRepresentation: (eventObject) => {
         return `<section class="events">
             <div class="date">Date: ${eventObject.date}</div>
@@ -14,7 +14,9 @@ const eventToDOM = {
             </section>`
     },
 
-        //Producing New Event Form for user to enter event
+
+
+            //creating function to produce new event form
     newEventForm: () => {
         return `
             <form action="" id="eventFormFields">
@@ -42,7 +44,7 @@ const eventToDOM = {
     },
 
 
-        //Populating New Event Form with a previously saved event for editing
+        //function to populate New Event Form with a previously saved event
     populateEventForm: (eventObject) => {
         const hiddenEventEntryId = document.querySelector("#hiddenEventEntryId");
         const dateInput = document.querySelector("#eventDate");
@@ -56,4 +58,4 @@ const eventToDOM = {
     }
 }
 
-export default eventToDOM 
+export default eventToDOM

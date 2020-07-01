@@ -19,7 +19,7 @@ messagesAPI.messagesGetData()
 })
 messageEventListener()
 
-import API from './events/eventsData.js';
+import eventsAPI from './events/eventsData.js';
 import eventEntryForms from "./events/eventsList.js"
 import eventListeners from "./events/eventsEventListeners.js"
 

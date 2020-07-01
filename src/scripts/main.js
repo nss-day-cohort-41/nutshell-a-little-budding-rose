@@ -7,25 +7,30 @@ import userButtons from "./users/usersList.js"
 import  { newsButtons, showNewsEntries } from "./news/newsList.js"
 import choresAPI from "./chores/choresComponent.js"
 
+const renderPage = () => {
+    showNewsEntries()
+    
+    messagesAPI.messagesGetData()
+    .then(() => {
+        messageList();
+    })
+    API.getAllEvents ()
+        .then(eventEntryForms.makeEventList)
+}
+
 userButtons.logIn()
 userButtons.register()
+userButtons.logOut()
 
-showNewsEntries()
 newsButtons.save()
 newsButtons.deleteEdit()
 
-messagesAPI.messagesGetData()
-.then(() => {
-    messageList();
-})
 messageEventListener()
 
 import API from './events/eventsData.js';
 import eventEntryForms from "./events/eventsList.js"
 import eventListeners from "./events/eventsEventListeners.js"
 
-API.getAllEvents ()
-    .then(eventEntryForms.makeEventList)
 
 
 eventListeners.deleteEventEntry()
@@ -74,3 +79,6 @@ saveChoreButton.addEventListener("click", event => {
         console.log("gee i hope this saves")
     }
 })
+
+
+export default renderPage

@@ -1,4 +1,4 @@
-//This module stores all the button event listeners
+//This module stores all the Event listeners for Events 
 //Created by: Kelley Crittenden
 
 import API from "./eventsData.js"

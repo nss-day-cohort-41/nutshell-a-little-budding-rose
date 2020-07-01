@@ -51,7 +51,6 @@ const eventToDOM = {
         const nameInput = document.querySelector("#eventName");
         const locationInput = document.querySelector("#eventLocation");
 
-
         hiddenEventEntryId.value = eventObject.hiddenEventEntryId;
         dateInput.value = eventObject.date;
         nameInput.value = eventObject.name;

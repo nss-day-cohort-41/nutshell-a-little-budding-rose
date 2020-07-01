@@ -1,11 +1,8 @@
-// This module 
+// This module renders to the DOM
 //Created by: Kelley Crittenden
 
 
 import eventToDOM from "./eventsComponent.js"
-
-
-
 
 const eventEntryForms = {
 

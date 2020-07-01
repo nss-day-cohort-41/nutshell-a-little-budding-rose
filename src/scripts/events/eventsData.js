@@ -8,8 +8,7 @@ const eventsAPI = {
         return fetch("http://localhost:8088/events")
         .then((response) => response.json());
     },
-            //Function 
-
+    
             //Function to SAVE NEW event to the database
     saveEventEntry: (eventObject) => {
         return fetch("http://localhost:8088/events", {

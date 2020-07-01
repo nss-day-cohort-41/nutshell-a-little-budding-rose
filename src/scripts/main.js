@@ -23,7 +23,7 @@ import eventsAPI from './events/eventsData.js';
 import eventEntryForms from "./events/eventsList.js"
 import eventListeners from "./events/eventsEventListeners.js"
 
-API.getAllEvents ()
+eventsAPI.getAllEvents ()
     .then(eventEntryForms.makeEventList)
 
 

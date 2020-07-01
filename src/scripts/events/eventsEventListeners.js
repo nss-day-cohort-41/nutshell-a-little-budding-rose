@@ -1,7 +1,7 @@
 //This module stores all the Event listeners for Events 
 //Created by: Kelley Crittenden
 
-import API from "./eventsData.js"
+import eventsAPI from "./eventsData.js"
 import eventEntryForms from "./eventsList.js"
 import eventToDOM from "./eventsComponent.js"
 
@@ -11,6 +11,7 @@ const eventsFormTarget = document.querySelector(".eventsForm")
 const clearEventForm = document.querySelector(".newEventSection")
 
 const eventListeners = {
+
 
         //event listener for New Event Button, opens new event form then closes it when saved
     createNewEventEntry: () => {
@@ -34,8 +35,8 @@ const eventListeners = {
                     location: eventLocation
                 }
                 if (newEvent.date !== "" && newEvent.name !== "" && newEvent.location !== "") {
-                    API.saveEventEntry(newEvent)
-                    .then(()=> {API.getAllEvents()
+                    eventsAPI.saveEventEntry(newEvent)
+                    .then(()=> {eventsAPI.getAllEvents()
                         .then((event)=> {
                             eventEntryForms.makeEventList(event)
                             clearEventForm.innerHTML = ""})  
@@ -53,8 +54,8 @@ const eventListeners = {
         eventsTarget.addEventListener("click", event => {
             if (event.target.id.startsWith("deleteEventButton--")) {
                 const eventToDelete = event.target.id.split("--")[1]
-                    API.deleteEventEntry(eventToDelete) 
-                        .then(()=> {API.getAllEvents()
+                    eventsAPI.deleteEventEntry(eventToDelete) 
+                        .then(()=> {eventsAPI.getAllEvents()
                             .then((event)=> {eventEntryForms.makeEventList(event)})  
                             })
             }
@@ -69,7 +70,7 @@ const eventListeners = {
             if(event.target.id.startsWith("editEventButton--")) {
                 //clearEventForm.innerHTML = eventToDOM.newEventForm()
                 const eventToEdit = event.target.id.split("--")[1];
-                API.getSingleEvent(eventToEdit)
+                eventsAPI.getSingleEvent(eventToEdit)
                 .then(eventToEdit => eventToDOM.populateEventForm(eventToEdit))
                 .then(clearEventForm.innerHTML = eventToDOM.newEventForm())
             }
@@ -78,9 +79,4 @@ const eventListeners = {
 
 }
 
-<<<<<<< HEAD
 export default eventListeners
-=======
-export default eventListeners
-
->>>>>>> master

@@ -13,7 +13,6 @@ const renderPage = () => {
     .then(() => {
         messageList();
     })
-    
     API.getAllEvents ()
         .then(eventEntryForms.makeEventList)
 }
@@ -38,29 +37,29 @@ eventListeners.editEventEntry()
 eventListeners.saveEventEntry()
 eventListeners.createNewEventEntry()
 
-// import API from './chores/choresComponent.js';
+import API from './chores/choresComponent.js';
 
-// ////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
 
-// const allChores = () => {
-// //     // GET
-//     API.getAllChores()
-//     .then((chores) => {
-//         console.log(chores);
-//     })
-// }
+const allChores = () => {
+//     // GET
+    API.getAllChores()
+    .then((chores) => {
+        console.log(chores);
+    })
+}
 
-// // //id, name, date, completed
-// // const newChore3 = makeChore(3, "Make Dinner", "06-29-20", true);
+// //id, name, date, completed
+// const newChore3 = makeChore(3, "Make Dinner", "06-29-20", true);
 
-// // // POST
-// // API.addAChore(newChore3)
-// // .then(() => {
-// //     allChores();
-// // });
+// // POST
+// API.addAChore(newChore3)
+// .then(() => {
+//     allChores();
+// });
 
-// allChores();
-// makeChoreList();
+allChores();
+makeChoreList();
 
 
 export default renderPage

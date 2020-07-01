@@ -7,8 +7,10 @@ import friendsData from "./friendsData.js"
 const friendsEventListener = () => {
         let activeFriendLocation = false
       const activeUserID = sessionStorage.getItem("activeUser")
-
-    
+      let activeUserObject;
+      friendsData.getActiveUser(activeUserID).then((userObject) => {
+        activeUserObject = userObject
+      })
     const friendsLocation = document.querySelector(".friends_list")
     
     //event listener for messages
@@ -29,7 +31,13 @@ const friendsEventListener = () => {
             const userNameAndMessageId = getUserInfo.split("---")[1];
             const userName = userNameAndMessageId.split("-")[0];
             const messageId = userNameAndMessageId.split("-")[1];
-           if(userId != activeUserID) {
+           
+           // use object activeuserobject and check if it has the active User has the 
+           //clicked on user's ID in their friend list
+
+            if(userId != activeUserID) {
+
+               
                //gets location of the individual box that was selected
               
             const locationForMessageBox = document.querySelector(`#messageObject--${messageId}`)
@@ -49,11 +57,11 @@ const friendsEventListener = () => {
         }
         else if(clickEvent.target.className.startsWith("addFriend")) {
                 const friendId = event.target.className.split("addFriend--")[1]
-                const activeUserObject = friendsData.getActiveUser(activeUserID).then((userObject) => {
-                    console.log(userObject)
-                    userObject.followersId.push(friendId)
-                    friendsData.updateFriendList(activeUserID, userObject)
-                })
+                // const activeUserObject = friendsData.getActiveUser(activeUserID).then((userObject) => {
+                //     console.log(userObject)
+                //     userObject.followersId.push(friendId)
+                //     friendsData.updateFriendList(activeUserID, userObject)
+                // })
                 // friendsData.updateFriendList(activeUserID, )
             }
         

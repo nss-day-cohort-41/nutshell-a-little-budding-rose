@@ -6,7 +6,7 @@ import messageEventListener from "./messages/messageEvents.js"
 import userButtons from "./users/usersList.js"
 import  { newsButtons, showNewsEntries } from "./news/newsList.js"
 import choresAPI from "./chores/choresComponent.js"
-import API from './events/eventsData.js';
+import eventsAPI from './events/eventsData.js';
 import eventEntryForms from "./events/eventsList.js"
 import eventListeners from "./events/eventsEventListeners.js"
 
@@ -20,7 +20,7 @@ const renderPage = () => {
     .then(() => {
         messageList();
     })
-    API.getAllEvents ()
+    eventsAPI.getAllEvents ()
         .then(eventEntryForms.makeEventList)
 }
 

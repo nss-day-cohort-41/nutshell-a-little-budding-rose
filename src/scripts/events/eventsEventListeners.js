@@ -31,7 +31,7 @@ const eventListeners = {
                 const eventLocation = document.querySelector("#eventLocation").value
                 const eventUserId = sessionStorage.getItem("activeUser")
                 const newEvent = {
-                    user: eventUserId,
+                    userId: eventUserId,
                     date: eventDate,
                     name: eventName,
                     location: eventLocation

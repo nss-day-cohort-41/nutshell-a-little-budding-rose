@@ -12,6 +12,7 @@ Concepts covered in this project include JavaScript, HTML, CSS, session storage,
 - Created new form with the ability to post new data to database from DOM
 - Created edit form with the ability to edit data in database from DOM
 - Created delete button with the ability to delete events object in database from DOM
+- Added functionality to only show events belonging to logged in user
 
 ## Christopher McColgan
 - Created log in/registration section
@@ -20,6 +21,7 @@ Concepts covered in this project include JavaScript, HTML, CSS, session storage,
 - App tracks which user is logged in site by utilizing session storage
 - Created registration functionality which will allow user to register new accounts
 - News section contains ability to post new article/edit existing articles/delete existing articles in database via forms on DOM
+- Added functionality to only show news articles belonging to logged in user
 
 ## Gavin Swofford
 - Created messages section

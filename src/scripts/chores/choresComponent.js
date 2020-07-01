@@ -4,7 +4,7 @@
 
 const url = "http://localhost:8088";
 
-const API = {
+const choresAPI = {
     getAllChores: () => {
         return fetch(`${url}/chores`)
         .then(response => response.json());
@@ -36,6 +36,6 @@ const API = {
 
 }
 
-export default API; 
+export default choresAPI; 
 
 console.log("chores component working")

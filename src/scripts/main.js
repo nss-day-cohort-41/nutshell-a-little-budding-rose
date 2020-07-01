@@ -5,6 +5,7 @@ import makeChoreList from "./chores/choresList.js"
 import messageEventListener from "./messages/messageEvents.js"
 import userButtons from "./users/usersList.js"
 import  { newsButtons, showNewsEntries } from "./news/newsList.js"
+import choresAPI from "./chores/choresComponent.js"
 
 userButtons.logIn()
 userButtons.register()
@@ -38,7 +39,7 @@ eventListeners.createNewEventEntry()
 
 const allChores = () => {
     // GET
-    API.getAllChores()
+    choresAPI.getAllChores()
     .then((chores) => {
         console.log(chores);
     })
@@ -55,6 +56,8 @@ const clearInputs = () => {
     document.querySelector("#choreCompleted").value = "";
 
 }
+
+const saveChoreButton = document.querySelector("#saveChore")
 
 saveChoreButton.addEventListener("click", event => {
     const hiddenChoreId = document.querySelector("id");

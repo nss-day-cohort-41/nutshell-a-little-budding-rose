@@ -11,11 +11,10 @@ const choreContainer = document.querySelector("#choreContainer");
 const makeChoreList = () => {
     choreContainer.innerHTML = "";
     API.getAllChores()
-    .then((choresArray) => {
-        const allChoresNames = choresArray.map(item => {
+    .then((choreArray) => {
+        const allChoresNames = choreArray.map(item => {
                 return item.typeId ===1;
         });
-        console.log("all chores list", allChores);
         choreContainer.innerHTML += allChoresNames.join("");
 
         const firstChore = choreArray.find(item => {

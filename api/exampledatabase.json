@@ -24,13 +24,20 @@
             "location": "event location"
         }
     ],
-    "tasks": [
+    "chores": [
         { 
-            "id": 1, 
-            "userId": 1, 
-            "task": "Take out garbage", 
-            "complete": false 
+            "id": 1,
+            "choreName": "Take out garbage",
+            "choreDate": "06-13-20",
+            "choreComplete": false
+        },
+        {
+            "id": 2,
+            "choreName": "Clean Fishtank",
+            "choreDate": "06-14-20",
+            "choreComplete": true
         }
+        
         
     ],
     "friends": [

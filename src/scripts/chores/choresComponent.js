@@ -16,13 +16,17 @@ const API = {
             },
             body: JSON.stringify(choreObject)
         }).then(response => response.json());
-    
-    }, 
-    getAllChores : () => {
-        return fetch (`${url}/chores`)
-        then(response => response.json());
     },
-    deleteChore: (id) => {
+    updateChore: (id) => {
+        return fetch (`${url}/chore/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedChoreObject)
+            })
+    },
+    deleteChore: (id, updatedChoreObject) => {
         return fetch(`{url}/chore/${id}`, {
             method: "DELETE"
         }).then(response => response.json());

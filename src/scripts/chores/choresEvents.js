@@ -2,12 +2,13 @@
 
 import API from './choresComponent.js';
 import makeChoreHTML from './choresDOM.js';
+import updateFormFields from '/updateFormFields.js'
 
 
 const choreContainer = document.querySelector("#choreContainer");
 
 export default {
-    registerListener() {
+    registerListeners() {
         choreContainer.addEventListener("click", event => {
         console.log("what in the heckaroonie is the event", event.target.id);
         if (event.target.id.startsWith("deleteChore--")) {
@@ -22,8 +23,8 @@ export default {
                 console.log(choretoEdit);
 
                 API.editChore(choreToBeEdited)
-                .then(makeChoreList)
-            }
+                .then(choreObject => updateFormFields(choreObject));    
+            }        
         })
     }
 }

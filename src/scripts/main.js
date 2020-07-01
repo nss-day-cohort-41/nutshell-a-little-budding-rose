@@ -32,14 +32,6 @@ const allChores = () => {
     })
 }
 
-// //id, name, date, completed
-// const newChore3 = makeChore(3, "Make Dinner", "06-29-20", true);
-
-// // POST
-// API.addAChore(newChore3)
-// .then(() => {
-//     allChores();
-// });
 
 allChores();
 makeChoreList();

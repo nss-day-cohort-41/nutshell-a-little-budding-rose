@@ -7,8 +7,8 @@ import  { newsButtons, showNewsEntries } from "./news/newsList.js"
 
 userButtons.logIn()
 userButtons.register()
+userButtons.logOut()
 
-showNewsEntries()
 newsButtons.save()
 newsButtons.deleteEdit()
 

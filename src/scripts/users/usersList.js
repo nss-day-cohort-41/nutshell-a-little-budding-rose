@@ -3,6 +3,7 @@
 
 import makeUserComponent from "./usersComponent.js"
 import usersAPI from "./usersData.js"
+import { newsButtons, showNewsEntries } from "./../news/newsList.js"
 
 const logInEmail = document.querySelector("#logInEmailField")
 const logInPassword = document.querySelector("#logInPasswordField")
@@ -54,12 +55,20 @@ const userButtons = {
                         if (user.email == logInEmail.value && user.password === logInPassword.value) {
                             sessionStorage.setItem("activeUser", user.id)
                             sessionStorage.setItem("activeUserUsername", user.username)
-                            document.querySelector(".user_info").innerHTML = makeUserComponent()
+                            document.querySelector(".user_info__info").innerHTML = makeUserComponent()
                             document.getElementById("overlay").style.display = "none"
                             console.log(user)
+                            showNewsEntries()
                         }
                     }))
             }
+        })
+    },
+    logOut: () => {
+        document.querySelector("#logOutButton").addEventListener("click", clickEvent => {
+            sessionStorage.removeItem("activeUser")
+            sessionStorage.removeItem("activeUserUsername")
+            location.reload()
         })
     }
 }

@@ -4,6 +4,7 @@
 import makeUserComponent from "./usersComponent.js"
 import usersAPI from "./usersData.js"
 import { newsButtons, showNewsEntries } from "./../news/newsList.js"
+import renderPage from "./../main.js"
 
 const logInEmail = document.querySelector("#logInEmailField")
 const logInPassword = document.querySelector("#logInPasswordField")
@@ -58,7 +59,7 @@ const userButtons = {
                             document.querySelector(".user_info__info").innerHTML = makeUserComponent()
                             document.getElementById("overlay").style.display = "none"
                             console.log(user)
-                            showNewsEntries()
+                            renderPage()
                         }
                     }))
             }

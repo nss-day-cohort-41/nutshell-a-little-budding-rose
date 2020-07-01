@@ -1,3 +1,4 @@
+// This module contains the make chore list function
 //*This section was created by Lacey Walker*/
 
 

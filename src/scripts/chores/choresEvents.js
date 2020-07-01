@@ -1,6 +1,5 @@
-
+// This module contains event listeners
 //*This section was created by Lacey Walker*/
-
 
 import API from './choresComponent.js';
 import makeChoreHTML from './choresDOM.js';

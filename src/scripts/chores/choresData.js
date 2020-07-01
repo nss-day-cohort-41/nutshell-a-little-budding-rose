@@ -1,5 +1,5 @@
-//*This section was created by Lacey Walker*/
 ////This module stores the calls function
+//*This section was created by Lacey Walker*/
 
 const makeChore = (id, choreName, choreDate) => {
     const newChore = {

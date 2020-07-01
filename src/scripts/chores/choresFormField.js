@@ -3,15 +3,13 @@
 
         //getting the referance to input fields in the form
 const updateFormFields = (choreObject) => {
-    const hiddenChoreId = document.querySelector("#choresInputId");
-    const choreNameInput = document.querySelector("#name");
-    const choreDateInput = document.querySelector("#date");
-    const choreCompleteInput = document.querySelector("#completed")
+    const hiddenChoreId = document.querySelector("#choresInputId").value;
+    const choreNameInput = document.querySelector("#choresNameInput").value;
+    const choreDateInput = document.querySelector("#date").value;
 
     hiddenChoreId = choreObject.id;
     choreNameInput = choreObject.choreName;
     choreDateInput = choreObject.choreDate;
-    choreCompleteInput = choreObject.choreComplete;
 }
 
 export default updateFormFields;

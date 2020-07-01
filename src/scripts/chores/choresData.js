@@ -20,4 +20,3 @@ const makeChore = (choreName, choreDate) => {
 // console.log("this is the second chore", newChore2);
 
 export default makeChore;
-

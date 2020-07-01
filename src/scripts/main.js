@@ -50,26 +50,17 @@ const allChores = () => {
     })
 }
 
-
-allChores();
-makeChoreList();
-
-const clearInputs = () => {
-    document.querySelector("#choresInputId").value = "";
-    document.querySelector("#choreNameInput").value = "";
-    document.querySelector("#choreDateInput").value = "";
-}
-
 const saveChoreButton = document.querySelector("#saveChore")
 
 saveChoreButton.addEventListener("click", event => {
     const hiddenChoreId = document.querySelector("#choresInputId");
-
+    debugger
     if (hiddenChoreId.vaule !== "") {
         const choreNameInput = document.querySelector("#choreNameInput").value;
         const choreDateInput = document.querySelector("#choreDateInput").value;
-        //name, date, completed
-        choresAPI.addAChore(makeChore(choreNameInput, choreDateInput))
+        const newChoreObject = makeChore(choreNameInput, choreDateInput)
+        console.log("new chore object", newChoreObject)
+        choresAPI.addAChore(newChoreObject)
         .then(() => {
             clearInputs();
             makeChoreList();
@@ -78,7 +69,20 @@ saveChoreButton.addEventListener("click", event => {
         // save functionality
         console.log("gee i hope this saves")
     }
+
+    const clearInputs = () => {
+        document.querySelector("#choresInputId").value = "";
+        document.querySelector("#choreNameInput").value = "";
+        document.querySelector("#choreDateInput").value = "";
+    }
+    
 })
+
+
+allChores();
+makeChoreList();
+
+
 
 
 export default renderPage

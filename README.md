@@ -1,3 +1,48 @@
+# Team A Little Budding Rose's Group Project: Nutshell
+
+Team A Little Budding Rose was tasked with creating a social media app using the criteria listed below and under the issues tab.
+
+Concepts covered in this project include JavaScript, HTML, CSS, session storage, creating a JSON database, posting/editing/deleting the data in the database with forms and event listeners on the DOM, and associating that data with a userID.
+
+/////////////////////////////Image goes here
+
+## Kelley Crittenden
+- Created events section
+- Fetched events data from database to display on DOM
+- Created new form with the ability to post new data to database from DOM
+- Created edit form with the ability to edit data in database from DOM
+- Created delete button with the ability to delete events object in database from DOM
+
+## Christopher McColgan
+- Created log in/registration section
+- Created log in functionality with mock validation by checking if email & password match with existing user object in database
+- App tracks which user is logged in site by utilizing session storage
+- Created registration functionality which will allow user to register new accounts
+- Created news section
+- News section contains ability to post new article/edit existing articles/delete existing articles in database via forms on DOM
+
+## Gavin Swofford
+- Created messages section
+- Fetched message data from database to display on DOM
+- Created new form with the ability to post new data to database from DOM
+- Created edit form with the ability to edit data in database from DOM
+- Created delete button with the ability to delete events object in database from DOM
+
+## Lacey Walker
+- Created chores section
+- Fetched chores data from database to display on DOM
+- Created new form with the ability to post new data to database from DOM
+- Created edit form with the ability to edit data in database from DOM
+- Created delete button with the ability to delete events object in database from DOM
+
+## Setup
+
+1. Clone this repository
+1. `cd` into the directory it creates
+1. Make a `database.json` file in the `api` directory, or use existing `exampledatabase.json`
+1. `cd` into `api` directory and enter `json-server -p 8088 -w database.json` to serve json file
+1. `cd` into `src` directory and `serve` to make app acessable via web browser
+
 # Nutshell: The Information Dashboard
 
 ## Setup: Follow these steps exactly

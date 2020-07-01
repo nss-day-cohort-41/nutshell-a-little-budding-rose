@@ -16,7 +16,7 @@ export default {
             const choreToDelete = event.target.id.split("--")[1];
             console.log(choreToDelete);
 
-            API.deleteChore(choreToDeleted)
+            API.deleteChore(choreToDelete)
             .then(makeChoreList)
 
             } else if(event.target.id.startsWith("editChore--")) {

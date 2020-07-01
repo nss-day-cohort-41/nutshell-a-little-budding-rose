@@ -50,24 +50,21 @@ allChores();
 makeChoreList();
 
 const clearInputs = () => {
-    document.querySelector("#id").value = "";
-    document.querySelector("#choreName").value = "";
-    document.querySelector("#choreDate").value = "";
-    document.querySelector("#choreCompleted").value = "";
-
+    document.querySelector("#choresInputId").value = "";
+    document.querySelector("#choreNameInput").value = "";
+    document.querySelector("#choreDateInput").value = "";
 }
 
 const saveChoreButton = document.querySelector("#saveChore")
 
 saveChoreButton.addEventListener("click", event => {
-    const hiddenChoreId = document.querySelector("id");
+    const hiddenChoreId = document.querySelector("#choresInputId");
 
     if (hiddenChoreId.vaule !== "") {
-        const choreNameInput = document.querySelector("choreName").value;
-        const choreDateInput = document.querySelector("choreDate").value;
-        const choreCompleteInput = document.querySelector("choreComplete").value;
+        const choreNameInput = document.querySelector("#choreNameInput").value;
+        const choreDateInput = document.querySelector("#choreDateInput").value;
         //name, date, completed
-        API.updateChore(hiddenChoreId.value, makeChore(choreNameInput, choreDateInput, choreCompleteInput))
+        choresAPI.addAChore(makeChore(choreNameInput, choreDateInput))
         .then(() => {
             clearInputs();
             makeChoreList();

@@ -1,8 +1,10 @@
-//* created by Lacey *
+//This module stores the Event listeners 
+//*This section was created by Lacey Walker*/
+
 
 const url = "http://localhost:8088";
 
-const API = {
+const choresAPI = {
     getAllChores: () => {
         return fetch(`${url}/chores`)
         .then(response => response.json());
@@ -16,20 +18,23 @@ const API = {
             },
             body: JSON.stringify(choreObject)
         }).then(response => response.json());
-    
-    }, 
-    getAllChores : () => {
-        return fetch (`${url}/chores`)
-        then(response => response.json());
     },
-    deleteChore: (id) => {
-        return fetch(`{url}/chore/${id}`, {
+    updateChore: (id) => {
+        return fetch (`${url}/chores/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedChoreObject)
+            })
+    },
+    deleteChore: (id, updatedChoreObject) => {
+        return fetch(`{url}/chores/${id}`, {
             method: "DELETE"
         }).then(response => response.json());
     }
 
 }
 
-export default API; 
+export default choresAPI; 
 
-console.log("chores component")

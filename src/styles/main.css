@@ -49,8 +49,7 @@ header {
     /* This adds a black outline to the header text. It was adding an outline to the 🌰 emoji too,
     which looked bad on Windows so I separated the text and emoji with a span tag */
 }
-
-.chores, .friends_list, .news, .messages, .event-section, .user_info {
+.choreForm, .choreContainer, .friends_list, .news, .messages, .event-section, .user_info {
     background-color: rgba(255, 255, 255, .6);
     /* rgba(255, 255, 255, .6) is white, and the last number controls the opacity %. .6 is 60% opacity */
     margin: .5em;

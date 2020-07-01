@@ -2,7 +2,7 @@
 
 import API from './choresComponent.js';
 import makeChoreHTML from './choresDOM.js';
-import updateFormFields from './updateFormFields.js';
+import updateFormFields from './choresFormField.js';
 
 
 const choreContainer = document.querySelector("#choreContainer");

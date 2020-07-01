@@ -1,4 +1,5 @@
-//* created by Lacey *
+//*This section was created by Lacey Walker*/
+
 
 import API from './choresComponent.js';
 import makeChoreHTML from './choresDOM.js';
@@ -33,4 +34,5 @@ const makeChoreList = () => {
 
 export default makeChoreList;
 
+console.log("chore list working")
 

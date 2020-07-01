@@ -1,4 +1,5 @@
-//* created by Lacey *console.log("Do your chores!");
+//*This section was created by Lacey Walker*/
+
 
 const makeChore = (id, choreName, choreDate) => {
     const newChore = {
@@ -20,3 +21,5 @@ console.log("this is the new chore", newChore1);
 console.log("this is the second chore", newChore2);
 
 export default makeChore;
+
+console.log("data is working")

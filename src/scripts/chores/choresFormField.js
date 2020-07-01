@@ -1,4 +1,5 @@
-//* created by Lacey *
+//*This section was created by Lacey Walker*/
+
         //getting the referance to input fields in the form
 const updateFormFields = (choreObject) => {
     const hiddenChoreId = document.querySelector("#id");
@@ -13,3 +14,5 @@ const updateFormFields = (choreObject) => {
 }
 
 export default updateFormFields;
+
+console.log("form field working")

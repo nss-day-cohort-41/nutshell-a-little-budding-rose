@@ -32,7 +32,7 @@ eventListeners.editEventEntry()
 eventListeners.saveEventEntry()
 eventListeners.createNewEventEntry()
 
-import API from './chores/choresComponent.js';
+
 
 ////////////////////////////////////////////////////////
 

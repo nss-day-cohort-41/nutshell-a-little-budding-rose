@@ -1,4 +1,5 @@
-//*created by lacey*/
+//This module containts functions that will display to the DOM
+//*This section was created by Lacey Walker*/
 
 const makeChoreHTML = ( choreObject ) => {
     const domElement = `<section class="chores">
@@ -14,4 +15,4 @@ const makeChoreHTML = ( choreObject ) => {
 
 export default makeChoreHTML;
 
-console.log("tacos suck")
+console.log("dom is working")

@@ -21,8 +21,6 @@ messagesAPI.messagesGetData()
 
 })
 messageEventListener()
-<<<<<<< HEAD
-=======
 
 import API from './events/eventsData.js';
 import eventEntryForms from "./events/eventsList.js"
@@ -60,4 +58,3 @@ const allChores = () => {
 
 allChores();
 makeChoreList();
->>>>>>> bdc2623c2cf177bdf68a296207861da3ffcfc2a8

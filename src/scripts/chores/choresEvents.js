@@ -15,7 +15,7 @@ export default {
 
         // deleteChore:() => {
         choreContainer.addEventListener("click", event => {
-        console.log("what in the heckaroonie is the event", event.target.id);
+        
         if (event.target.id.startsWith("deleteChore--")) {
             const choreToDelete = event.target.id.split("--")[1];
             console.log(choreToDelete);

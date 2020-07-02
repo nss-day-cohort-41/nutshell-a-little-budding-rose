@@ -54,12 +54,10 @@ const saveChoreButton = document.querySelector("#saveChore")
 
 saveChoreButton.addEventListener("click", event => {
     const hiddenChoreId = document.querySelector("#choresInputId");
-    debugger
     if (hiddenChoreId.vaule !== "") {
         const choreNameInput = document.querySelector("#choreNameInput").value;
         const choreDateInput = document.querySelector("#choreDateInput").value;
         const newChoreObject = makeChore(choreNameInput, choreDateInput)
-        console.log("new chore object", newChoreObject)
         choresAPI.addAChore(newChoreObject)
         .then(() => {
             clearInputs();

@@ -18,6 +18,7 @@ Concepts covered in this project include JavaScript, HTML, CSS, session storage,
 ## Christopher McColgan
 - Created log in/registration section
 - Created news section
+- Created README file
 - Created log in functionality with mock validation by checking if email & password match with existing user object in database
 - App tracks which user is logged in site by utilizing session storage
 - Created registration functionality which allows user to register new accounts by posting new user object in database

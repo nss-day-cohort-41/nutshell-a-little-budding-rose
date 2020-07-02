@@ -70,6 +70,7 @@ const userButtons = {
             }
         })
     },
+
     logOut: () => {
         document.querySelector("#logOutButton").addEventListener("click", clickEvent => {
             sessionStorage.removeItem("activeUser")

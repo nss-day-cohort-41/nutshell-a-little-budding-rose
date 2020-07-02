@@ -26,6 +26,7 @@ const eventListeners = {
     saveEventEntry: () => {
         eventsFormTarget.addEventListener("click", event => {
             if (event.target.id.startsWith("saveEventButton--")) { 
+                const eventIdVal = document.querySelector("#hiddenEventEntryId").value
                 const eventDate = document.querySelector("#eventDate").value 
                 const eventName = document.querySelector("#eventName").value 
                 const eventLocation = document.querySelector("#eventLocation").value
@@ -36,19 +37,25 @@ const eventListeners = {
                     name: eventName,
                     location: eventLocation
                 }
-                if (newEvent.date !== "" && newEvent.name !== "" && newEvent.location !== "") {
+                if (newEvent.date === "" || newEvent.name === "" || newEvent.location === "") {
+                    alert("Please complete all fields.")
+                    } else if (eventIdVal !== "") {
+                        eventsAPI.editEvent(eventIdVal, newEvent)
+                        .then(()=> {eventsAPI.getAllEvents()
+                            .then((event)=> {
+                                eventEntryForms.makeEventList(event)
+                                clearEventForm.innerHTML = ""})  
+                            })
+                } else {
                     eventsAPI.saveEventEntry(newEvent)
                     .then(()=> {eventsAPI.getAllEvents()
                         .then((event)=> {
                             eventEntryForms.makeEventList(event)
                             clearEventForm.innerHTML = ""})  
-                        })
-                } else {
-                    alert("Please complete all fields.")
-                }
+                })
    
             }
-        })
+        }})
     },
 
         //event listener for Delete Button

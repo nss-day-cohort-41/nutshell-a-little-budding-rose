@@ -6,6 +6,7 @@ import messageEventListener from "./messages/messageEvents.js"
 import userButtons from "./users/usersList.js"
 import  { newsButtons, showNewsEntries } from "./news/newsList.js"
 import choresAPI from "./chores/choresComponent.js"
+import registerListeners from "./chores/choresEvents.js"
 
 const renderPage = () => {
     showNewsEntries()
@@ -51,14 +52,19 @@ const allChores = () => {
 }
 
 const saveChoreButton = document.querySelector("#saveChore")
+const clearInputs = () => {
+    document.querySelector("#choreInputId").value = "";
+    document.querySelector("#choreNameInput").value = "";
+    document.querySelector("#choreDateInput").value = "";
+}
 
 saveChoreButton.addEventListener("click", event => {
-    const hiddenChoreId = document.querySelector("#choresInputId");
-    if (hiddenChoreId.vaule !== "") {
-        const choreNameInput = document.querySelector("#choreNameInput").value;
-        const choreDateInput = document.querySelector("#choreDateInput").value;
-        const newChoreObject = makeChore(choreNameInput, choreDateInput)
-        choresAPI.addAChore(newChoreObject)
+    const choreNameInput = document.querySelector("#choreNameInput").value;
+    const choreDateInput = document.querySelector("#choreDateInput").value;
+    const newChoreObject = makeChore(choreNameInput, choreDateInput)
+    const hiddenChoreId = document.querySelector("#choreInputId").value;
+    if (hiddenChoreId !== "") {
+        choresAPI.editChore(hiddenChoreId, newChoreObject)
         .then(() => {
             clearInputs();
             makeChoreList();
@@ -66,20 +72,18 @@ saveChoreButton.addEventListener("click", event => {
     } else {
         // save functionality
         console.log("gee i hope this saves")
-    }
+        choresAPI.addAChore(newChoreObject)
+        .then(() => {
+            clearInputs();
+            makeChoreList();
+    })
 
-    const clearInputs = () => {
-        document.querySelector("#choresInputId").value = "";
-        document.querySelector("#choreNameInput").value = "";
-        document.querySelector("#choreDateInput").value = "";
-    }
-    
-})
+}})
 
 
 allChores();
 makeChoreList();
-
+registerListeners.registerListeners();
 
 
 

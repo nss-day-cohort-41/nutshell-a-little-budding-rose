@@ -5,6 +5,7 @@ Team A Little Budding Rose was tasked with creating a social media app using the
 Concepts covered in this project include JavaScript, HTML, CSS, session storage, creating a JSON database, posting/editing/deleting the data in the database with forms and event listeners on the DOM, and associating that data with a userID.
 
 ![Nutshell_homePage](https://i.imgur.com/uvBqdNb.png)
+![Nutshell_logInPage](https://i.imgur.com/Be1e4c7.png)
 
 ## Kelley Crittenden
 - Created events section

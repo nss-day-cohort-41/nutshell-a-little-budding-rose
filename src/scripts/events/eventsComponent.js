@@ -3,15 +3,7 @@
 
 import eventsAPI from "./eventsData.js";
 
-// const sortedEvents = (eventsAPI.getAllEvents) => {
-//     return eventsAPI.getAllEvents.sort(function(a, b){
-//         return new Date(b.date) - new Date(a.date);
-//     });
-// }
 
-// sortedEvents(eventsAPI.getAllEvents);
-
-// console.log(sortedEvents)
 
 const eventToDOM = {
 

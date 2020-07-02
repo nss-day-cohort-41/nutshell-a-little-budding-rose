@@ -1,16 +1,22 @@
 //add an event listner to message section
 //if click is on new button
 //add input box text
+//===================
+//add if states to collect data before loading
 //post 
 
 import messagesComponent from "./messagesComponent.js"
 import messagesAPI from "./messagesData.js"
 import messageList from "./messagesList.js"
 
-const userId = 5;
-const userName = "Gavin Swofford"
+
+
 const messageEventListener = () => {
     
+        const userId = sessionStorage.getItem("activeUser")
+        const userName = sessionStorage.getItem("activeUserUsername")
+        
+
     const messageEventLocation = document.querySelector(".messages")
     const messageInputLocation = document.querySelector(".messageInputSection")
 
@@ -43,8 +49,6 @@ const messageEventListener = () => {
             const cardDeleteIdAndUserId = event.target.id.split("--DeleteButton--")[1];
             const cardDelete = cardDeleteIdAndUserId.split("--")[0]
             const cardUserID = cardDeleteIdAndUserId.split("--")[1]
-            console.log(cardUserID, "this is the user ID!!!")
-            console.log(cardDelete)
             if(userId == cardUserID) {
              messagesAPI.deletePostData(cardDelete).then(() =>{
                  messagesAPI.messagesGetData().then(() => {
@@ -87,6 +91,7 @@ const messageEventListener = () => {
 
 
     })
+    
 }
 
 export default messageEventListener

@@ -1,12 +1,13 @@
 
-const userID = 5;
+const userID = sessionStorage.getItem("activeUser")
+
  const messagesComponent = {
      HTMLComponent: (messageObject) => {
         if(messageObject.userID == userID) {
-        const messageHtmlString = `<section>
+        const messageHtmlString = `<section class="messageObject">
         
         <section id="messageObject--${messageObject.id}" class="messageObject">
-        <p class="messages-title--${messageObject.userID}">${messageObject.userName}</p>
+        <p class="messages-title--${messageObject.userID}---${messageObject.userName}-${messageObject.id}">${messageObject.userName}</p>
         <br><p>${messageObject.message}</p>
         <button id="message--DeleteButton--${messageObject.id}--${messageObject.userID}">Delete</button>
         <button id="message--EditButton--${messageObject.id}--${messageObject.userID}">Edit</button></section>
@@ -15,10 +16,10 @@ const userID = 5;
         
         return messageHtmlString}
         else {
-           return `<section>
+           return `<section class="messageObject">
         
            <section id="messageObject--${messageObject.id}" class="messageObject">
-           <p class="messages-title--${messageObject.userID}">${messageObject.userName}</p>
+           <p class="messages-title--${messageObject.userID}---${messageObject.userName}-${messageObject.id}">${messageObject.userName}</p>
            <br><p>${messageObject.message}</p>
            </section>
           

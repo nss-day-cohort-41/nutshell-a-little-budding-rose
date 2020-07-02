@@ -14,10 +14,12 @@ const renderPage = () => {
     messagesAPI.messagesGetData()
     .then(() => {
         messageList();
+        
     })
     API.getAllEvents ()
         .then(eventEntryForms.makeEventList)
 }
+//  friendsEventListener()
 
 userButtons.logIn()
 userButtons.register()

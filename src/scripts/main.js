@@ -6,6 +6,7 @@ import messageEventListener from "./messages/messageEvents.js"
 import userButtons from "./users/usersList.js"
 import  { newsButtons, showNewsEntries } from "./news/newsList.js"
 import choresAPI from "./chores/choresComponent.js"
+import registerListeners from "./chores/choresEvents.js"
 
 const renderPage = () => {
     showNewsEntries()
@@ -53,7 +54,7 @@ const allChores = () => {
 const saveChoreButton = document.querySelector("#saveChore")
 
 saveChoreButton.addEventListener("click", event => {
-    const hiddenChoreId = document.querySelector("#choresInputId");
+    const hiddenChoreId = document.querySelector("#choreInputId");
     if (hiddenChoreId.vaule !== "") {
         const choreNameInput = document.querySelector("#choreNameInput").value;
         const choreDateInput = document.querySelector("#choreDateInput").value;
@@ -69,7 +70,7 @@ saveChoreButton.addEventListener("click", event => {
     }
 
     const clearInputs = () => {
-        document.querySelector("#choresInputId").value = "";
+        document.querySelector("#choreInputId").value = "";
         document.querySelector("#choreNameInput").value = "";
         document.querySelector("#choreDateInput").value = "";
     }
@@ -79,7 +80,7 @@ saveChoreButton.addEventListener("click", event => {
 
 allChores();
 makeChoreList();
-
+registerListeners.registerListeners();
 
 
 

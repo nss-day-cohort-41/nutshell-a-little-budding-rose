@@ -23,11 +23,8 @@ export default {
             } else if(event.target.id.startsWith("editChore--")) {
                 const choreToEdit = event.target.id.split("--")[1];
                 console.log(choreToEdit);
-
-                choresAPI.editChore(choreToEdit)
+                choresAPI.getSingleChore(choreToEdit)
                 .then(choreToEdit => updateFormFields(choreToEdit));    
             }       
         })}
 }
-
-

@@ -21,6 +21,11 @@ const choresAPI = {
         }).then(response => response.json());
     },
     
+    getSingleChore: (id) => {
+        return fetch(`${url}/chores/${id}`)
+            .then(response => response.json())
+    },
+
     editChore: (id, updatedChoreObject) => {
         return fetch (`${url}/chores/${id}`, {
             method: "PUT",

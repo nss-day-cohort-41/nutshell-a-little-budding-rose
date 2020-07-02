@@ -38,7 +38,7 @@ const choresAPI = {
     deleteChore: (id) => {
         return fetch(`${url}/chores/${id}`, {
             method: "DELETE"
-        }).then(response => response.json());
+        })
     }
 
 }

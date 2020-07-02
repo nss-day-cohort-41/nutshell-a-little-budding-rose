@@ -11,11 +11,9 @@ const eventToDOM = {
     eventHTMLRepresentation: (eventObject) => {
 
         return `<section class="events">
-            <div class="date">Date: ${eventObject.date}</div>
-            <div class="name">Name: ${eventObject.name}</div>
-            <div class ="location">Location: ${eventObject.location}</div><br> 
-            <button id ="editEventButton--${eventObject.id}">Edit</button>
-            <button id ="deleteEventButton--${eventObject.id}">Delete</button>
+            <span><span class="bold">${eventObject.date}</span> | ${eventObject.name} | <span class="italic">${eventObject.location}</span><span>
+            <button type="button" id="editEventButton--${eventObject.id}">Edit</button>
+            <button type="button" id="deleteEventButton--${eventObject.id}">Delete</button>
             </section>`
     },
 
@@ -27,23 +25,23 @@ const eventToDOM = {
                 <input type="hidden" id="hiddenEventEntryId" value=""/>
 
                 <fieldset>
-                    <label for="eventDate">Date:</label>
+                    <label for="eventDate"></label>
                     <input type="date" id="eventDate" name="eventDate"/>  
                 </fieldset>
 
                 <fieldset>
-                    <label for="eventName">Name:</label>
-                    <input type="text" id="eventName" name="eventName"/>
+                    <label for="eventName"></label>
+                    <input type="text" id="eventName" name="eventName" placeholder="Event name"/>
                 </fieldset>
 
                 <fieldset>
-                    <label for="eventLocation">Location:</label>
-                    <input type="text" id="eventLocation" name="eventLocation"/>
+                    <label for="eventLocation"></label>
+                    <input type="text" id="eventLocation" name="eventLocation" placeholder="Event location"/>
                 </fieldset>
 
             </form>    
 
-            <button id="saveEventButton--">Save Event</button>`
+            <button id="saveEventButton--">Save</button>`
     },
 
 
@@ -54,7 +52,7 @@ const eventToDOM = {
         const nameInput = document.querySelector("#eventName");
         const locationInput = document.querySelector("#eventLocation");
 
-        hiddenEventEntryId.value = eventObject.hiddenEventEntryId;
+        hiddenEventEntryId.value = eventObject.id;
         dateInput.value = eventObject.date;
         nameInput.value = eventObject.name;
         locationInput.value = eventObject.location;

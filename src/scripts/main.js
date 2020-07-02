@@ -7,6 +7,9 @@ import userButtons from "./users/usersList.js"
 import  { newsButtons, showNewsEntries } from "./news/newsList.js"
 import choresAPI from "./chores/choresComponent.js"
 import registerListeners from "./chores/choresEvents.js"
+import eventsAPI from "./events/eventsData.js"
+import eventEntryForms from "./events/eventsList.js"
+import eventListeners from "./events/eventsEventListeners.js"
 
 const renderPage = () => {
     showNewsEntries()
@@ -15,9 +18,9 @@ const renderPage = () => {
     .then(() => {
         messageList();
         
+    eventsAPI.getAllEvents ()
+    .then(eventEntryForms.makeEventList)
     })
-    API.getAllEvents ()
-        .then(eventEntryForms.makeEventList)
 }
 //  friendsEventListener()
 
@@ -30,9 +33,6 @@ newsButtons.deleteEdit()
 
 messageEventListener()
 
-import API from './events/eventsData.js';
-import eventEntryForms from "./events/eventsList.js"
-import eventListeners from "./events/eventsEventListeners.js"
 
 
 
@@ -45,13 +45,13 @@ eventListeners.createNewEventEntry()
 
 ////////////////////////////////////////////////////////
 
-const allChores = () => {
-    // GET
-    choresAPI.getAllChores()
-    .then((chores) => {
-        console.log(chores);
-    })
-}
+// const allChores = () => {
+//     // GET
+//     choresAPI.getAllChores()
+//     .then((chores) => {
+//         console.log(chores);
+//     })
+// }
 
 const saveChoreButton = document.querySelector("#saveChore")
 const clearInputs = () => {
@@ -83,7 +83,7 @@ saveChoreButton.addEventListener("click", event => {
 }})
 
 
-allChores();
+// allChores();
 makeChoreList();
 registerListeners.registerListeners();
 

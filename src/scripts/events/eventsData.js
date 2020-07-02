@@ -33,6 +33,15 @@ const eventsAPI = {
         return fetch(`http://localhost:8088/events/${eventsId}`)
                 .then(response => response.json());
     },
+    editEvent: (eventsId, eventObject) => {
+        return fetch(`http://localhost:8088/events/${eventsId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(eventObject)
+        })
+    }
 
 }
 

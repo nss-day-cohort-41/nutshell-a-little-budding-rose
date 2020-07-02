@@ -1,14 +1,14 @@
 @import "./messageStyle.css";
-@import "./friends.css";
+/* @import "./friends.css"; */
 @import 'login.css';
 @import 'news.css';
+@import 'chores.css';
+@import 'events.css';
 
-/* Delete comments before pushing final project */
 * {
     font-family: sans-serif;
 }
 
-/* For explanations on what's happening with flexbox see: https://css-tricks.com/almanac/properties/f/flex/ */
 .container {
     display: flex;
     flex-direction: row;
@@ -46,13 +46,29 @@ header {
 .nutshell {
     color: #DDA15E;
     -webkit-text-stroke: 1px black;
-    /* This adds a black outline to the header text. It was adding an outline to the 🌰 emoji too,
-    which looked bad on Windows so I separated the text and emoji with a span tag */
 }
+
 .choreForm, .choreContainer, .friends_list, .news, .messages, .event-section, .user_info {
     background-color: rgba(255, 255, 255, .6);
-    /* rgba(255, 255, 255, .6) is white, and the last number controls the opacity %. .6 is 60% opacity */
     margin: .5em;
     padding: .25em;
     border: 1px black solid;
+}
+
+fieldset {
+    border: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    background-color: black;
 }

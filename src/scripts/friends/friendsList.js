@@ -11,7 +11,7 @@ const displayFriendList = (activeUserObject) => {
     //gather individual user data based on the each indivudal friend 
     //display that data to the dom in the friend section
     const locationForFriendsToDisplay = document.querySelector(".friends_list")
-    locationForFriendsToDisplay.innerHTML = ""
+    locationForFriendsToDisplay.innerHTML = "Friends"
         
 
     console.log("active userObject", activeUserObject.followersId)

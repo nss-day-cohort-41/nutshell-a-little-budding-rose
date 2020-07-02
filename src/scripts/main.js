@@ -18,9 +18,9 @@ const renderPage = () => {
     .then(() => {
         messageList();
         
-    })
     eventsAPI.getAllEvents ()
     .then(eventEntryForms.makeEventList)
+    })
 }
 //  friendsEventListener()
 

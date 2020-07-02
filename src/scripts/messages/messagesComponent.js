@@ -7,7 +7,7 @@ const userID = sessionStorage.getItem("activeUser")
         const messageHtmlString = `<section class="messageObject">
         
         <section id="messageObject--${messageObject.id}" class="messageObject">
-        <span><span class="bold messages-title--${messageObject.userID}---${messageObject.userName}-${messageObject.id}">${messageObject.userName}:</span> ${messageObject.message}</span>
+        <span><span class="messages-title--${messageObject.userID}---${messageObject.userName}-${messageObject.id} bold">${messageObject.userName}:</span> ${messageObject.message}</span>
         <br><button id="message--EditButton--${messageObject.id}--${messageObject.userID}">Edit</button>
         <button id="message--DeleteButton--${messageObject.id}--${messageObject.userID}">Delete</button>
         </section>
@@ -19,7 +19,7 @@ const userID = sessionStorage.getItem("activeUser")
            return `<section class="messageObject">
         
            <section id="messageObject--${messageObject.id}" class="messageObject">
-           <span><span class="bold messages-title--${messageObject.userID}---${messageObject.userName}-${messageObject.id}">${messageObject.userName}</span>: ${messageObject.message}</span></span>
+           <span><span class="messages-title--${messageObject.userID}---${messageObject.userName}-${messageObject.id} bold">${messageObject.userName}</span>: ${messageObject.message}</span></span>
            </section>
           
            </section>`

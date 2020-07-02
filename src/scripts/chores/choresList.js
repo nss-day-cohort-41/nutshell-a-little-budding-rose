@@ -17,11 +17,7 @@ const makeChoreList = () => {
 		choreArray.forEach(item => {
             choreContainer.innerHTML += makeChoreHTML(item);
         });
-
-        registerListeners.registerListeners();
     })
 }
 
 export default makeChoreList;
-
-

@@ -2,14 +2,14 @@
 //*This section was created by Lacey Walker*/
 
         //getting the referance to input fields in the form
-const updateFormFields = (choreObject) => {
-    const hiddenChoreId = document.querySelector("#choresInputId").value;
-    const choreNameInput = document.querySelector("#choresNameInput").value;
-    const choreDateInput = document.querySelector("#date").value;
+const updateFormFields = (choreObj) => {
+    const hiddenChoreId = document.querySelector("#choresInputId");
+    const choreNameInput = document.querySelector("#choreNameInput");
+    const choreDateInput = document.querySelector("#choreDateInput");
 
-    hiddenChoreId = choreObject.id;
-    choreNameInput = choreObject.choreName;
-    choreDateInput = choreObject.choreDate;
+    hiddenChoreId.value = choreObj.id;
+    choreNameInput.value = choreObj.choreName;
+    choreDateInput.value = choreObj.choreDate;
 }
 
 export default updateFormFields;

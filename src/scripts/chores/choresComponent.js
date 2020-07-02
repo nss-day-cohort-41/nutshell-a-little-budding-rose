@@ -11,14 +11,18 @@ const choresAPI = {
         
     },
     addAChore: (choreObject) => {
+        console.log(choreObject)
         return fetch(`${url}/chores`, {
             method: "POST",
             headers: {
-                    "contentType": "application/json"
+                    "Content-Type": "application/json"
             },
             body: JSON.stringify(choreObject)
         }).then(response => response.json());
     },
+
+
+    
     updateChore: (id) => {
         return fetch (`${url}/chores/${id}`, {
             method: "PUT",
@@ -37,4 +41,5 @@ const choresAPI = {
 }
 
 export default choresAPI; 
+
 

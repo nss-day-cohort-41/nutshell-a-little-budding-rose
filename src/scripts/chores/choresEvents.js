@@ -1,31 +1,40 @@
 // This module contains event listeners
 //*This section was created by Lacey Walker*/
 
-import API from './choresComponent.js';
+import choresAPI from './choresComponent.js';
 import makeChoreHTML from './choresDOM.js';
 import updateFormFields from './choresFormField.js';
+import makeChoresList from './choresList.js';
+import makeChore from './choresData.js'
 
 
 const choreContainer = document.querySelector("#choreContainer");
 
 export default {
     registerListeners() {
+
+        // deleteChore:() => {
         choreContainer.addEventListener("click", event => {
-        console.log("what in the heckaroonie is the event", event.target.id);
+        
         if (event.target.id.startsWith("deleteChore--")) {
             const choreToDelete = event.target.id.split("--")[1];
             console.log(choreToDelete);
 
-            API.deleteChore(choreToDeleted)
-            .then(makeChoreList)
+            choresAPI.deleteChore(choreToDelete)
+            .then(makeChoresList)
 
             } else if(event.target.id.startsWith("editChore--")) {
                 const choreToEdit = event.target.id.split("--")[1];
                 console.log(choretoEdit);
 
-                API.editChore(choreToBeEdited)
+                choresAPI.editChore(choreToBeEdited)
                 .then(choreObject => updateFormFields(choreObject));    
-            }        
-        })
-    }
+            }       
+        })}
+
+        // saveChore: () => {
+        
+      
 }
+
+

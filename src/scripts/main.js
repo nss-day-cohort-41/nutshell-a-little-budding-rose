@@ -6,6 +6,7 @@ import messageEventListener from "./messages/messageEvents.js"
 import userButtons from "./users/usersList.js"
 import  { newsButtons, showNewsEntries } from "./news/newsList.js"
 import choresAPI from "./chores/choresComponent.js"
+import friendsEventListener from "./friends/friendsEvents.js"
 
 const renderPage = () => {
     showNewsEntries()
@@ -13,10 +14,12 @@ const renderPage = () => {
     messagesAPI.messagesGetData()
     .then(() => {
         messageList();
+        
     })
     API.getAllEvents ()
         .then(eventEntryForms.makeEventList)
 }
+//  friendsEventListener()
 
 userButtons.logIn()
 userButtons.register()

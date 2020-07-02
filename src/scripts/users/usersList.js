@@ -4,6 +4,7 @@
 import makeUserComponent from "./usersComponent.js"
 import usersAPI from "./usersData.js"
 import getFriendsData from "../friends/getFriendsAfterLoad.js"
+import friendsEventListener from "../friends/friendsEvents.js"
 
 import { newsButtons, showNewsEntries } from "./../news/newsList.js"
 import renderPage from "./../main.js"
@@ -62,6 +63,7 @@ const userButtons = {
                             document.getElementById("overlay").style.display = "none"
                             console.log(user)
                             getFriendsData(user)
+                            friendsEventListener()
                             renderPage()
                         }
                     }))

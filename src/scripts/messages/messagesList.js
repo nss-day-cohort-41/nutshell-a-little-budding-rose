@@ -1,5 +1,7 @@
 import messagesAPI from "./messagesData.js"
 import messagesComponent from "./messagesComponent.js"
+import friendsEventListener from "../friends/friendsEvents.js"
+
 
 //listing the message to the DOM
 //first function
@@ -18,6 +20,8 @@ const messageList = () => {
 
         messageLocation.innerHTML += convertedMessageObject
     }
+    
+    // friendsEventListener()
 }
 
 export default messageList

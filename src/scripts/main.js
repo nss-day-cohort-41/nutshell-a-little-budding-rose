@@ -6,7 +6,7 @@ import messageEventListener from "./messages/messageEvents.js"
 import userButtons from "./users/usersList.js"
 import  { newsButtons, showNewsEntries } from "./news/newsList.js"
 import choresAPI from "./chores/choresComponent.js"
-import friendsEventListener from "./friends/friendsEvents.js"
+import registerListeners from "./chores/choresEvents.js"
 
 const renderPage = () => {
     showNewsEntries()
@@ -53,29 +53,20 @@ const allChores = () => {
     })
 }
 
-
-allChores();
-makeChoreList();
-
+const saveChoreButton = document.querySelector("#saveChore")
 const clearInputs = () => {
-    document.querySelector("#id").value = "";
-    document.querySelector("#choreName").value = "";
-    document.querySelector("#choreDate").value = "";
-    document.querySelector("#choreCompleted").value = "";
-
+    document.querySelector("#choreInputId").value = "";
+    document.querySelector("#choreNameInput").value = "";
+    document.querySelector("#choreDateInput").value = "";
 }
 
-const saveChoreButton = document.querySelector("#saveChore")
-
 saveChoreButton.addEventListener("click", event => {
-    const hiddenChoreId = document.querySelector("id");
-
-    if (hiddenChoreId.vaule !== "") {
-        const choreNameInput = document.querySelector("choreName").value;
-        const choreDateInput = document.querySelector("choreDate").value;
-        const choreCompleteInput = document.querySelector("choreComplete").value;
-        //name, date, completed
-        API.updateChore(hiddenChoreId.value, makeChore(choreNameInput, choreDateInput, choreCompleteInput))
+    const choreNameInput = document.querySelector("#choreNameInput").value;
+    const choreDateInput = document.querySelector("#choreDateInput").value;
+    const newChoreObject = makeChore(choreNameInput, choreDateInput)
+    const hiddenChoreId = document.querySelector("#choreInputId").value;
+    if (hiddenChoreId !== "") {
+        choresAPI.editChore(hiddenChoreId, newChoreObject)
         .then(() => {
             clearInputs();
             makeChoreList();
@@ -83,8 +74,19 @@ saveChoreButton.addEventListener("click", event => {
     } else {
         // save functionality
         console.log("gee i hope this saves")
-    }
-})
+        choresAPI.addAChore(newChoreObject)
+        .then(() => {
+            clearInputs();
+            makeChoreList();
+    })
+
+}})
+
+
+allChores();
+makeChoreList();
+registerListeners.registerListeners();
+
 
 
 export default renderPage

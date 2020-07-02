@@ -20,11 +20,13 @@ const choresAPI = {
             body: JSON.stringify(choreObject)
         }).then(response => response.json());
     },
+    
     getSingleChore: (id) => {
         return fetch(`${url}/chores/${id}`)
             .then(response => response.json())
-    },    
-    updateChore: (id, updatedChoreObject) => {
+    },
+
+    editChore: (id, updatedChoreObject) => {
         return fetch (`${url}/chores/${id}`, {
             method: "PUT",
             headers: {

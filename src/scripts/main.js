@@ -53,36 +53,38 @@ eventListeners.createNewEventEntry()
 
 const saveChoreButton = document.querySelector("#saveChore")
 const clearInputs = () => {
-    document.querySelector("#choresInputId").value = "";
+    document.querySelector("#choreInputId").value = "";
     document.querySelector("#choreNameInput").value = "";
     document.querySelector("#choreDateInput").value = "";
 }
 
 saveChoreButton.addEventListener("click", event => {
-    const hiddenChoreId = document.querySelector("#choresInputId").value;
+    const choreNameInput = document.querySelector("#choreNameInput").value;
+    const choreDateInput = document.querySelector("#choreDateInput").value;
+    const newChoreObject = makeChore(choreNameInput, choreDateInput)
+    const hiddenChoreId = document.querySelector("#choreInputId").value;
     if (hiddenChoreId !== "") {
-        const choreNameInput = document.querySelector("#choreNameInput").value;
-        const choreDateInput = document.querySelector("#choreDateInput").value;
-        const newChoreObject = makeChore(choreNameInput, choreDateInput)
-        choresAPI.updateChore(hiddenChoreId, newChoreObject)
+        choresAPI.editChore(hiddenChoreId, newChoreObject)
         .then(() => {
             clearInputs();
             makeChoreList();
         });
     } else {
+        // save functionality
+        console.log("gee i hope this saves")
         choresAPI.addAChore(newChoreObject)
         .then(() => {
             clearInputs();
             makeChoreList();
     })
 
-    
 }})
 
 
 // allChores();
 makeChoreList();
-registerListeners();
+registerListeners.registerListeners();
+
 
 
 export default renderPage

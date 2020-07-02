@@ -4,7 +4,7 @@
 
 import choresAPI from './choresComponent.js';
 import makeChoreHTML from './choresDOM.js';
-import registerListeners from './choresEvents.js'
+
 
 
 const choreContainer = document.querySelector("#choreContainer");
@@ -17,6 +17,8 @@ const makeChoreList = () => {
 		choreArray.forEach(item => {
             choreContainer.innerHTML += makeChoreHTML(item);
         });
+
+
     })
 }
 

@@ -12,11 +12,14 @@ const displayFriendList = (activeUserObject) => {
     //display that data to the dom in the friend section
     const locationForFriendsToDisplay = document.querySelector(".friends_list")
     locationForFriendsToDisplay.innerHTML = ""
+        
 
     console.log("active userObject", activeUserObject.followersId)
     for(let friendId of activeUserObject.followersId) {
+        console.log(friendId)
+        locationForFriendsToDisplay.innerHTML = ""
         friendsData.getUserData(friendId).then((object) => {
-            locationForFriendsToDisplay.innerHTML += friendsComponent.friendsToTheDOM(object)
+            locationForFriendsToDisplay.innerHTML += friendsComponent.friendsToTheDOM(object) + "hey"
         })
     }
     // friendsData.getUserData()

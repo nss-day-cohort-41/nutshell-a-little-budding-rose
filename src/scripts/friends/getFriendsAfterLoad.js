@@ -13,12 +13,12 @@ const getFriendsData = (user) => {
        console.log("it worked")
     
     const locationForFriendsToDisplay = document.querySelector(".friends_list")
-
+    locationForFriendsToDisplay.innerHTML = ""
         friendsData.getActiveUser(activeUserID).then((activeUserObject) => {
             // friendsData.getUserData
             for(let friend of activeUserObject.followersId){
                 friendsData.getUserData(friend).then((object) => {
-                    locationForFriendsToDisplay.innerHTML += friendsComponent.friendsToTheDOM(object)
+                    locationForFriendsToDisplay.innerHTML += friendsComponent.friendsToTheDOM(friend)
                 })
                 
             }

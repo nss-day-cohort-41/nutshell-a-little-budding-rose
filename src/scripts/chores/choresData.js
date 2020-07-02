@@ -1,9 +1,8 @@
 ////This module stores the calls function
 //*This section was created by Lacey Walker*/
 
-const makeChore = (id, choreName, choreDate) => {
+const makeChore = (choreName, choreDate) => {
     const newChore = {
-        id: id,
         choreName: choreName,
         choreDate: choreDate,
         choreComplete: Boolean
